@@ -1,0 +1,21 @@
+[package]
+name = "yanagi"
+edition = "2021"
+version.workspace = true
+
+[lib]
+name = "yanagi"
+crate-type = ["cdylib"]
+
+[dependencies]
+ilhook.workspace = true
+thiserror.workspace = true
+num_enum.workspace = true
+windows = { workspace = true, features = [
+	"Win32_Foundation",
+	"Win32_System_SystemServices",
+	"Win32_System_LibraryLoader",
+	"Win32_System_Console",
+	"Win32_System_Threading",
+	"Win32_System_Memory",
+] }
