@@ -1,0 +1,162 @@
+[workspace]
+members = [
+	"crates/mavuika-data",
+	"crates/mavuika-data/mavuika-data-derive",
+	"crates/mavuika-database",
+	"crates/mavuika-encryption",
+	"crates/mavuika-entity",
+	"crates/mavuika-network",
+	"crates/mavuika-proto",
+	"crates/mavuika-proto/mavuika-proto-derive",
+	"crates/mavuika-scene",
+	"crates/mavuika-message",
+	"crates/common",
+	"crates/dispatch-server",
+	"crates/game-server",
+	"crates/gate-server",
+	"crates/gate-server/kcp",
+	"crates/sdk-server",
+	"crates/mavuika-persistence",
+	"crates/game-server-core",
+	"crates/mavuika-time",
+	"crates/mavuika-map",
+	"crates/mavuika-command",
+	"crates/mavuika-combat",
+	"crates/mavuika-luashell",
+	"crates/mavuika-environment",
+	"crates/mavuika-pathfinding",
+	"crates/mavuika-inventory",
+	"crates/mavuika-avatar",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.0.1"
+
+[workspace.dependencies]
+# Runtime
+tokio = { version = "1.40.0", features = ["full"] }
+futures = "0.3.31"
+axum = "0.7.7"
+axum-server = "0.7.1"
+
+# Logic
+bevy_app = { version = "0.14.2", default-features = false }
+bevy_ecs = { version = "0.14.2", default-features = false }
+bevy_derive = "0.14.2"
+bevy_hierarchy = { version = "0.14.2", default-features = false, features = [
+	"bevy_app",
+] }
+
+# Serialization
+serde = { version = "1.0.210", features = ["derive"] }
+serde_json = "1.0.128"
+toml = "0.8.19"
+rbase64 = "2.0.3"
+
+prost = "0.13.3"
+prost-types = "0.13.3"
+prost-build = "0.13.3"
+
+# Error processing
+anyhow = "1.0.89"
+thiserror = "1.0.64"
+
+# Networking
+zeromq = { version = "0.4.1", features = ["tokio-runtime", "tcp-transport"] }
+
+# Cryptography
+rsa = { version = "0.9.6", features = ["sha2"] }
+rand_mt = "4.2.2"
+password-hash = { version = "0.5.0", features = ["alloc", "rand_core"] }
+pbkdf2 = { version = "0.12.2", features = ["simple"] }
+
+# Database
+sqlx = { version = "0.8.2", features = ["postgres", "runtime-tokio-rustls"] }
+
+# Encoding
+byteorder = "1.5.0"
+varint-rs = "2.2.0"
+
+# Util
+paste = "1.0.15"
+rand = "0.8.5"
+regex = "1.11.0"
+hex = "0.4.3"
+num_enum = "0.7.3"
+dashmap = "6.1.0"
+
+# Logging
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
+
+# Internal
+common = { path = "crates/common" }
+mavuika-data = { path = "crates/mavuika-data" }
+mavuika-network = { path = "crates/mavuika-network" }
+mavuika-database = { path = "crates/mavuika-database" }
+mavuika-encryption = { path = "crates/mavuika-encryption" }
+mavuika-proto = { path = "crates/mavuika-proto" }
+mavuika-entity = { path = "crates/mavuika-entity" }
+mavuika-avatar = { path = "crates/mavuika-avatar" }
+mavuika-scene = { path = "crates/mavuika-scene" }
+mavuika-environment = { path = "crates/mavuika-environment" }
+mavuika-pathfinding = { path = "crates/mavuika-pathfinding" }
+mavuika-combat = { path = "crates/mavuika-combat" }
+mavuika-time = { path = "crates/mavuika-time" }
+mavuika-map = { path = "crates/mavuika-map" }
+mavuika-inventory = { path = "crates/mavuika-inventory" }
+mavuika-command = { path = "crates/mavuika-command" }
+mavuika-message = { path = "crates/mavuika-message" }
+mavuika-persistence = { path = "crates/mavuika-persistence" }
+mavuika-luashell = { path = "crates/mavuika-luashell" }
+game-server-core = { path = "crates/game-server-core" }
+
+[workspace.lints.clippy]
+dbg_macro = "deny"
+todo = "deny"
+pedantic = { level = "warn", priority = -1 }
+nursery = { level = "warn", priority = -1 }
+cargo = { level = "warn", priority = -1 }
+
+branches_sharing_code = "allow"
+cast_lossless = "allow"
+cast_possible_truncation = "allow"
+cast_possible_wrap = "allow"
+cast_precision_loss = "allow"
+cast_sign_loss = "allow"
+checked_conversions = "allow"
+cognitive_complexity = "allow"
+collection_is_never_read = "allow"
+fallible_impl_from = "allow"
+fn_params_excessive_bools = "allow"
+inline_always = "allow"
+if_not_else = "allow"
+items_after_statements = "allow"
+match_wildcard_for_single_variants = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+module_name_repetitions = "allow"
+multiple_crate_versions = "allow"
+option_if_let_else = "allow"
+or_fun_call = "allow"
+range_plus_one = "allow"
+redundant_clone = "allow"
+redundant_closure_for_method_calls = "allow"
+ref_option = "allow"
+similar_names = "allow"
+string_lit_as_bytes = "allow"
+struct_excessive_bools = "allow"
+struct_field_names = "allow"
+transmute_undefined_repr = "allow"
+too_many_lines = "allow"
+unnecessary_wraps = "allow"
+unused_self = "allow"
+used_underscore_items = "allow"
+
+
+[profile.release]
+strip = true      # Automatically strip symbols from the binary.
+lto = true        # Link-time optimization.
+opt-level = 3     # Optimize for speed.
+codegen-units = 1 # Maximum size reduction optimizations.
