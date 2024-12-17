@@ -1,0 +1,1 @@
+npm run start "C:\Program Files\Star Rail\Games"
