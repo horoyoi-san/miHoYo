@@ -1,0 +1,1 @@
+cargo run --release --bin net-sdk
