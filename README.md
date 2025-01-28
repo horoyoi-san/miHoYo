@@ -65,6 +65,7 @@
 | 1315 | Boothill |
 | 1316 | Sam (Again) |
 | 1317 | Rappa |
+| 1319 | Mr. Reca |
 | 1401 | The Herta |
 | 1402 | Aglaea |
 | 1403 | Tribbie |
@@ -72,6 +73,7 @@
 | 1405 | Anaxa |
 | 1407 | Castorice |
 | 1408 | Phainon |
+| 1409 | Hyacine |
 | 8001 | Destruction Male MC |
 | 8002 | Destruction Female MC |
 | 8003 | Preservation Male MC |
@@ -113,8 +115,12 @@
 | 1261 | Jane | JaneDoe|
 | 1271| Seth | Seth |
 | 1281 | Piper | Piper, Clara |
+| 1291 | Hugo Vlad | HugoVlad |
 | 1311 | Astra Yao | Astra |
 | 1321 | Evelyn | Evelyn |
-| 1351 | Pulchra | Pulchra
+| 1331| Vivian | Vivian |
+| 1351 | Pulchra | Pulchra | 
+| 1361 | Trigger | Trigger |
+| 1381 | SS - Anby | SilverAnby|
 | 2011 | Wise | Wise |
 | 2021 | Belle | Belle |
