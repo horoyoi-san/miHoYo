@@ -1,0 +1,70 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger, RPG.GameCore.Config",
+          "DestroyAfterTriggered": true,
+          "IsClientOnly": true,
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+              "CustomString": {
+                "Value": "101040302_F"
+              },
+              "TaskEnabled": true
+            }
+          ],
+          "SkipFakeAvatar": true,
+          "TargetEntityType": "LocalPlayer",
+          "TargetGroupID": {},
+          "TargetID": {},
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 40
+                }
+              },
+              "ID": {
+                "fixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          },
+          "TargetTypes": [],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "101040302_F"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerPerformance, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "PerformanceID": 101040302,
+          "PerformanceType": "D",
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_101040302",
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

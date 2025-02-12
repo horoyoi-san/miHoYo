@@ -1,0 +1,89 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions, RPG.GameCore.Config",
+          "CustomValueMainMissionIDList": [
+            8015153
+          ],
+          "IsClientOnly": true,
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "TaskEnabled": true,
+          "TaskIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_801515310"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList, RPG.GameCore.Config",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareMissionCustomValue, RPG.GameCore.Config",
+            "EquationType": "Equal",
+            "IsClientOnly": true,
+            "MainMissionID": 8015153,
+            "MissionCustomValue": {
+              "Index": 1,
+              "ValidValueParamList": [
+                1,
+                2
+              ],
+              "isLocal": true
+            },
+            "TargetValue": 1,
+            "TaskEnabled": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.ConsumeMissionItem, RPG.GameCore.Config",
+              "IsAutoConsume": true,
+              "IsClientOnly": true,
+              "SimpleTalk": {
+                "ProtectTime": 0.8,
+                "TextSpeed": 20
+              },
+              "SubMissionID": 801515310,
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PlayNPCBubbleTalk, RPG.GameCore.Config",
+          "BubbleTalkInfoList": [
+            {
+              "AutoSkipTime": 3,
+              "GroupID": 162,
+              "GroupNpcID": 400001,
+              "TalkSentenceID": 815153281
+            },
+            {
+              "AutoSkipTime": 3,
+              "GroupID": 162,
+              "GroupNpcID": 400001,
+              "TalkSentenceID": 815153282
+            }
+          ],
+          "BubbleTalkType": "Normal",
+          "InstantFinish": true,
+          "IsClientOnly": true,
+          "IsLoop": true,
+          "LoopInterval": 9,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

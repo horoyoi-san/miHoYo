@@ -1,0 +1,80 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger, RPG.GameCore.Config",
+          "DisableAfterTriggered": true,
+          "IsClientOnly": true,
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+              "CustomString": {
+                "Value": "Mission_407131201"
+              },
+              "TaskEnabled": true
+            }
+          ],
+          "SkipFakeAvatar": true,
+          "TargetEntityType": "LocalPlayer",
+          "TargetGroupID": {},
+          "TargetID": {},
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+            "FetchType": "SinglePropByPropID",
+            "MultiPropID": [],
+            "SinglePropID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 10
+                }
+              },
+              "ID": {
+                "fixedValue": {
+                  "Value": 300003
+                }
+              }
+            }
+          },
+          "TargetTypes": [],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Mission_407131201"
+          },
+          "GoNextImmediately": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerPerformance, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "PerformanceID": 407131201,
+          "PerformanceType": "E",
+          "TaskEnabled": true,
+          "ValueSource": {}
+        },
+        {
+          "$type": "RPG.GameCore.ShowEnvBuffDialog, RPG.GameCore.Config",
+          "IsAutoGetParam": true,
+          "IsClientOnly": true,
+          "RaidID": 4013101,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_407131201",
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

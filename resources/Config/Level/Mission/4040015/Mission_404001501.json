@@ -1,0 +1,201 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupUITrigger, RPG.GameCore.Config",
+          "ButtonCallback": [
+            {
+              "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+              "CustomString": {
+                "Value": "Mission_404001501_Prop"
+              },
+              "TaskEnabled": true
+            }
+          ],
+          "ButtonIcon": "SpriteOutput/TalkIcon/CheckIcon.png",
+          "ButtonText": {
+            "Hash": 278713937
+          },
+          "IconType": "CheckIcon",
+          "InteractAngleRange": 180,
+          "IsClientOnly": true,
+          "OverrideTargetTypes": [],
+          "SkipFakeAvatar": true,
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 70
+                }
+              },
+              "ID": {
+                "fixedValue": {
+                  "Value": 300002
+                }
+              }
+            }
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Mission_404001501_Prop"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerPerformance, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "PerformanceID": 404001501,
+          "PerformanceType": "E",
+          "TaskEnabled": true,
+          "ValueSource": {}
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "404001501_TP"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.CreateProp, RPG.GameCore.Config",
+          "GroupID": {
+            "fixedValue": {
+              "Value": 70
+            }
+          },
+          "GroupPropID": {
+            "fixedValue": {
+              "Value": 300005
+            }
+          },
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.DestroyProp, RPG.GameCore.Config",
+          "GroupID": {
+            "fixedValue": {
+              "Value": 70
+            }
+          },
+          "ID": {
+            "fixedValue": {
+              "Value": 300002
+            }
+          },
+          "IsClientOnly": true,
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.DestroyProp, RPG.GameCore.Config",
+          "GroupID": {
+            "fixedValue": {
+              "Value": 70
+            }
+          },
+          "ID": {
+            "fixedValue": {
+              "Value": 300003
+            }
+          },
+          "IsClientOnly": true,
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PerformanceTransition, RPG.GameCore.Config",
+          "ActiveVirtualCamera": {
+            "CenterPosX": -1,
+            "CenterPosY": -1,
+            "IsActive": true,
+            "IsClientOnly": true,
+            "VCameraDitherMaxDistance": 1
+          },
+          "CaptureNpcList": [],
+          "CreateNpcList": [
+            {
+              "CreateList": [],
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 70
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400003
+                }
+              },
+              "IsClientOnly": true,
+              "TaskEnabled": true
+            },
+            {
+              "CreateList": [],
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 70
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400002
+                }
+              },
+              "IsClientOnly": true,
+              "TaskEnabled": true
+            }
+          ],
+          "DestroyNpcList": [],
+          "DisactiveVCamOnGraphEnd": true,
+          "IsClientOnly": true,
+          "SwitchCharacterAnchor": {
+            "AnchorName": {
+              "Value": "Anchor1"
+            },
+            "AreaName": {
+              "Value": "LevelArea_P20002_F20002001_G70"
+            },
+            "CharacterUniqueName": "LocalPlayer",
+            "IsClientOnly": true,
+            "IsLocalPlayer": true,
+            "ResetAnimation": true,
+            "ResetCamera": true,
+            "TaskEnabled": true
+          },
+          "SwitchInTime": 0.5,
+          "SwitchKeepTime": 0.7,
+          "SwitchOutTime": 1,
+          "TaskEnabled": true,
+          "WaitStreamingFinish": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_404001501",
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

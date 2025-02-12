@@ -1,0 +1,90 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList, RPG.GameCore.Config",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByComparePropState, RPG.GameCore.Config",
+            "IsClientOnly": true,
+            "State": "CheckPointDisable",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+              "FetchType": "SinglePropByPropID",
+              "SinglePropID": {
+                "GroupID": {
+                  "fixedValue": {
+                    "Value": 51
+                  }
+                },
+                "ID": {
+                  "fixedValue": {
+                    "Value": 300005
+                  }
+                }
+              }
+            },
+            "TaskEnabled": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TeleportToRotatableRegion, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "TargetAnchorGroupID": {
+                "fixedValue": {
+                  "Value": 140
+                }
+              },
+              "TargetAnchorInstanceID": {
+                "fixedValue": {
+                  "Value": 2
+                }
+              },
+              "TargetRegionIndex": {
+                "fixedValue": {
+                  "Value": -1
+                }
+              },
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Battle_103070111"
+          },
+          "GoNextImmediately": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerBattle, RPG.GameCore.Config",
+          "BattleAreaID": {
+            "fixedValue": {
+              "Value": 1
+            }
+          },
+          "EventID": {
+            "fixedValue": {
+              "Value": 20311030
+            }
+          },
+          "GroupID": {
+            "fixedValue": {
+              "Value": 1
+            }
+          },
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

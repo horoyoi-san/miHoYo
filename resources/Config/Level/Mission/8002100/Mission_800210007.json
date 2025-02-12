@@ -1,0 +1,69 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PlayMissionTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 2,
+              "TalkSentenceID": 800211018,
+              "TextSpeed": 20
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.NpcToPlayerDistanceTrigger, RPG.GameCore.Config",
+          "AwakeWaitTime": -1,
+          "FarDistance": -1,
+          "GroupID": 133,
+          "GroupNpcID": 400003,
+          "IsClientOnly": true,
+          "NearDistance": 20,
+          "NearTask": [
+            {
+              "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+              "CustomString": {
+                "Value": "Talk_800210007"
+              },
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_800210007"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.ClearNpcDistanceTrigger, RPG.GameCore.Config",
+          "GroupID": 133,
+          "GroupNpcID": 400003,
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_800210007",
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

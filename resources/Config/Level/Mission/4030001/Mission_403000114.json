@@ -1,0 +1,30 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFor, RPG.GameCore.Config",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCheckRogueExploreWin, RPG.GameCore.Config",
+            "IsClientOnly": true,
+            "TaskEnabled": true
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerRogueDialogue, RPG.GameCore.Config",
+          "DialoguePath": "Config/Level/Mission/4030001/Act/Act403000114.json",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.RogueFinish, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

@@ -1,0 +1,61 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LevelPerformanceInitialize, RPG.GameCore.Config",
+          "CreateCharacterList": [],
+          "EntityVisiableList": [],
+          "HideMonster": true,
+          "HideMunicipalOther": true,
+          "IsClientOnly": true,
+          "MarkStreamingItems": [],
+          "PerformanceType": "E",
+          "ResetEnvironment": true,
+          "ResetMonster": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayScreenTransfer, RPG.GameCore.Config",
+          "CustomTime": 0.5,
+          "IsClientOnly": true,
+          "TaskEnabled": true,
+          "Type": "Black"
+        },
+        {
+          "$type": "RPG.GameCore.PlayMessage, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "MessageSectionID": 1111000,
+          "ShowNotice": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.EndPerformance, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPerformanceEnd, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.SaveMessage, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "MessageSectionID": 1111000,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishLevelGraph, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ]
+}

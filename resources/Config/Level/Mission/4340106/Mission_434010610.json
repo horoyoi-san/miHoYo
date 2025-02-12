@@ -1,0 +1,77 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions, RPG.GameCore.Config",
+          "CustomValueMainMissionIDList": [
+            4340106
+          ],
+          "IsClientOnly": true,
+          "MainMissionIDList": [],
+          "PerformanceIDDsList": [],
+          "PerformanceIDList": [],
+          "TaskEnabled": true,
+          "TaskIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList, RPG.GameCore.Config",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareMissionCustomValue, RPG.GameCore.Config",
+            "EquationType": "Equal",
+            "IsClientOnly": true,
+            "MainMissionID": 4340106,
+            "MissionCustomValue": {
+              "ValidValueParamList": [
+                1,
+                2
+              ]
+            },
+            "TargetValue": 1,
+            "TaskEnabled": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.ConsumeMissionItem, RPG.GameCore.Config",
+              "IsAutoConsume": true,
+              "IsClientOnly": true,
+              "SimpleTalk": {
+                "ProtectTime": 0.8,
+                "TextSpeed": 20
+              },
+              "SubMissionID": 434010610,
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "ConsumeItem_4340106"
+          },
+          "GoNextImmediately": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.ConsumeMissionItem, RPG.GameCore.Config",
+          "IsAutoConsume": true,
+          "IsClientOnly": true,
+          "SimpleTalk": {
+            "ProtectTime": 0.8,
+            "TextSpeed": 20
+          },
+          "SubMissionID": 434010610,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

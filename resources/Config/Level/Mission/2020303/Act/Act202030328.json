@@ -1,0 +1,281 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LevelPerformanceInitialize, RPG.GameCore.Config",
+          "CreateCharacterList": [],
+          "EntityVisiableList": [],
+          "HideMonster": true,
+          "HideMunicipalCrowd": true,
+          "HideMunicipalOther": true,
+          "HideMunicipalPedestrian": true,
+          "IsClientOnly": true,
+          "MarkStreamingItems": [],
+          "PerformanceType": "D",
+          "ResetEnvironment": true,
+          "ResetMonster": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PerformanceTransition, RPG.GameCore.Config",
+          "ActiveVirtualCamera": {
+            "AnchorName": "Camera_2020303_3",
+            "AreaName": "MainMission_2020303",
+            "CenterPosX": -1,
+            "CenterPosY": -1,
+            "IsActive": true,
+            "IsClientOnly": true,
+            "TaskEnabled": true,
+            "VCameraDitherMaxDistance": 1
+          },
+          "CaptureNpcList": [],
+          "CreateNpcList": [
+            {
+              "CreateList": [],
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 71
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400003
+                }
+              },
+              "IsClientOnly": true,
+              "NPCUniqueName": {
+                "Value": "Qingque_202030328"
+              },
+              "TaskEnabled": true
+            }
+          ],
+          "DestroyNpcList": [],
+          "DisactiveVCamOnGraphEnd": true,
+          "IsClientOnly": true,
+          "SwitchCharacterAnchor": {
+            "AnchorName": {
+              "Value": "Anchor3"
+            },
+            "AreaName": {
+              "Value": "LevelArea_P20211_F20211001_G71"
+            },
+            "CharacterUniqueName": "LocalPlayer",
+            "IsClientOnly": true,
+            "IsLocalPlayer": true,
+            "ResetAnimation": true,
+            "ResetCamera": true,
+            "TaskEnabled": true
+          },
+          "SwitchKeepTime": 0.5,
+          "SwitchOutTime": 0.5,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.AdvNpcFaceToPlayer, RPG.GameCore.Config",
+          "FinishImmadiate": true,
+          "ForceToStandBy": true,
+          "FromDialog": true,
+          "GroupID": 71,
+          "GroupNpcID": 400003,
+          "IsClientOnly": true,
+          "NpcLookAtPlayer": true,
+          "PlayerLookAtNpc": true,
+          "StopLookAtOnGraphEnd": true,
+          "TaskEnabled": true,
+          "TryFaceToFace": true,
+          "TurnBackOnGraphEnd": true,
+          "WaitFinishMode": "WaitFaceAngle"
+        },
+        {
+          "$type": "RPG.GameCore.PlaySimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202032801,
+              "TextSpeed": 20
+            }
+          ],
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitSimpleTalkFinish, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayOptionTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "OptionList": [
+            {
+              "OptionIconType": "ChatContinueIcon",
+              "TalkSentenceID": 202032802,
+              "TriggerCustomString": "TalkSentence_202032802"
+            },
+            {
+              "OptionIconType": "ChatContinueIcon",
+              "TalkSentenceID": 202032803,
+              "TriggerCustomString": "TalkSentence_202032802"
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202032802"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.CharacterTriggerFreeStyle, RPG.GameCore.Config",
+          "CharacterUniqueName": "Qingque_202030328",
+          "ForceStart": true,
+          "IsClientOnly": true,
+          "NormalizedTransitionDuration": 0.05,
+          "StoryAvatarID": "NPC_Avatar_Girl_Qingque_00",
+          "StoryMotionID": 312010221,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlaySimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202032804,
+              "TextSpeed": 20
+            },
+            {
+              "ProtectTime": 0.8,
+              "TalkSentenceID": 202032805,
+              "TextSpeed": 20
+            }
+          ],
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitSimpleTalkFinish, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayOptionTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "OptionList": [
+            {
+              "OptionIconType": "ChatContinueIcon",
+              "TalkSentenceID": 202032806,
+              "TriggerCustomString": "TalkSentence_202032806"
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202032806"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.CharacterTriggerFreeStyle, RPG.GameCore.Config",
+          "CharacterUniqueName": "Qingque_202030328",
+          "ForceStart": true,
+          "IsClientOnly": true,
+          "NormalizedTransitionDuration": 0.05,
+          "StoryAvatarID": "NPC_Avatar_Girl_Qingque_00",
+          "StoryMotionID": 312010223,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlaySimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202032807,
+              "TextSpeed": 20
+            },
+            {
+              "ProtectTime": 0.8,
+              "TalkSentenceID": 202032808,
+              "TextSpeed": 20
+            }
+          ],
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitSimpleTalkFinish, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PerformanceTransition, RPG.GameCore.Config",
+          "ActiveVirtualCamera": {
+            "AnchorName": "Camera_2020303_3",
+            "AreaName": "MainMission_2020303",
+            "CenterPosX": -1,
+            "CenterPosY": -1,
+            "IsClientOnly": true,
+            "TaskEnabled": true,
+            "VCameraDitherMaxDistance": 1
+          },
+          "CaptureNpcList": [],
+          "CreateNpcList": [],
+          "DestroyNpcList": [
+            {
+              "GroupID": 71,
+              "GroupNpcID": 400003,
+              "IsClientOnly": true,
+              "TaskEnabled": true
+            }
+          ],
+          "DisactiveVCamOnGraphEnd": true,
+          "IsClientOnly": true,
+          "SwitchCharacterAnchor": {
+            "IsClientOnly": true,
+            "ResetAnimation": true,
+            "ResetCamera": true
+          },
+          "SwitchInTime": 0.5,
+          "SwitchKeepTime": 0.5,
+          "SwitchOutTime": 0.5,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.EndPerformance, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPerformanceEnd, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishLevelGraph, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ]
+}

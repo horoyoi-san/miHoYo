@@ -1,0 +1,69 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_412210306"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_412210306",
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropStateExecute, RPG.GameCore.Config",
+          "Execute": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList, RPG.GameCore.Config",
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+                  "IsClientOnly": true,
+                  "Key": "Mission_412210306",
+                  "TaskEnabled": true
+                }
+              ],
+              "Predicate": {
+                "$type": "RPG.GameCore.ByLocalPlayerIsFakeAvatar, RPG.GameCore.Config",
+                "IsClientOnly": true,
+                "TaskEnabled": true
+              },
+              "SuccessTaskList": [],
+              "TaskEnabled": true
+            }
+          ],
+          "IsClientOnly": true,
+          "State": "Open",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 34
+                }
+              },
+              "ID": {
+                "fixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

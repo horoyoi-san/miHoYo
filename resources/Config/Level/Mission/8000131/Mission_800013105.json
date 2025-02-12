@@ -1,0 +1,145 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PhotoGraphAimTarget, RPG.GameCore.Config",
+          "AimIdentifyType": "Manual",
+          "AimTargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvProp, RPG.GameCore.Config",
+            "MultiGroupFetch": [
+              {
+                "GroupID": {
+                  "fixedValue": {
+                    "Value": 52
+                  }
+                },
+                "ID": {
+                  "fixedValue": {
+                    "Value": 300005
+                  }
+                }
+              }
+            ],
+            "MultiGroupFetchByPropKey": [],
+            "MultiGroupFetchByUniqueName": []
+          },
+          "IsAim": true,
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PhotoGraphWaitIdentifyFinish, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "OnIdentifyFinish": [
+            {
+              "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+              "CustomString": {
+                "Value": "Mission_800013105_String"
+              },
+              "TaskEnabled": true
+            }
+          ],
+          "OnPreviewFinish": [],
+          "TaskEnabled": true,
+          "WaitTargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvProp, RPG.GameCore.Config",
+            "MultiGroupFetch": [
+              {
+                "GroupID": {
+                  "fixedValue": {
+                    "Value": 52
+                  }
+                },
+                "ID": {
+                  "fixedValue": {
+                    "Value": 300005
+                  }
+                }
+              }
+            ],
+            "MultiGroupFetchByPropKey": [],
+            "MultiGroupFetchByUniqueName": []
+          }
+        },
+        {
+          "$type": "RPG.GameCore.LockPhotoIdentifyHint, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PhotoGraphAimTarget, RPG.GameCore.Config",
+          "AimTargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvProp, RPG.GameCore.Config",
+            "MultiGroupFetch": [
+              {
+                "GroupID": {
+                  "fixedValue": {
+                    "Value": 52
+                  }
+                },
+                "ID": {
+                  "fixedValue": {
+                    "Value": 300005
+                  }
+                }
+              }
+            ],
+            "MultiGroupFetchByPropKey": [],
+            "MultiGroupFetchByUniqueName": []
+          },
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.SwitchPhotoGraphMode, RPG.GameCore.Config",
+          "ExitWhenPreViewDialogFinish": true,
+          "IdentifyRadiusOverride": {},
+          "InitFov": -1,
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "MaxAdvencePerTick": -1,
+          "TaskEnabled": true,
+          "WaitTime": {
+            "fixedValue": {
+              "Value": 0.6000000005587935
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_800013105",
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Mission_800013105_String"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PhotoGraphShowIdentifyResult, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "IsIdentifySuccess": true,
+          "IsShowToast": true,
+          "TaskEnabled": true,
+          "ToastText": {
+            "Hash": -372170477
+          }
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

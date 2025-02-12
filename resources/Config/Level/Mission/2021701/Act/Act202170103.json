@@ -1,0 +1,1416 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LevelPerformanceInitialize, RPG.GameCore.Config",
+          "CaptureNPCList": [],
+          "CreateCharacterList": [],
+          "EntityVisiableList": [],
+          "HideMonster": true,
+          "HideMunicipalCrowd": true,
+          "HideMunicipalOther": true,
+          "HideMunicipalPedestrian": true,
+          "IsClientOnly": true,
+          "MarkStreamingItems": [],
+          "PerformanceType": "D",
+          "PropVisiableList": [],
+          "ResetEnvironment": true,
+          "ResetMonster": true,
+          "StreamingSourcesAfterBlackMask": [],
+          "StreamingSourcesInBlackMask": [],
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PerformanceTransition, RPG.GameCore.Config",
+          "ActiveTemplateVirtualCamera": {
+            "IsActive": true,
+            "IsClientOnly": true
+          },
+          "ActiveVirtualCamera": {
+            "AnchorName": "Anchor2",
+            "AreaName": "LevelArea_P10202_F10202004_G193",
+            "CenterPosX": -1,
+            "CenterPosY": -1,
+            "IsActive": true,
+            "IsClientOnly": true,
+            "TaskEnabled": true,
+            "VCameraDitherMaxDistance": 1
+          },
+          "AdvCreateGroupEntity": {
+            "InstanceIDList": [],
+            "IsClientOnly": true
+          },
+          "AdvDestroyGroupEntity": {
+            "InstanceIDList": [],
+            "IsClientOnly": true
+          },
+          "AdvNpcFaceToPlayer": {
+            "ForceToStandBy": true,
+            "FromDialog": true,
+            "GroupID": 193,
+            "GroupNpcID": 400001,
+            "IsClientOnly": true,
+            "NpcLookAtPlayer": true,
+            "PlayerLookAtNpc": true,
+            "SteerImmediately": true,
+            "StopLookAtOnGraphEnd": true,
+            "TaskEnabled": true,
+            "TryFaceToFace": true,
+            "TurnBackOnGraphEnd": true,
+            "WaitFinishMode": "WaitFaceAngle"
+          },
+          "CaptureNpcList": [],
+          "CreateNpcList": [],
+          "CreateProp": {
+            "GroupID": {},
+            "GroupPropID": {},
+            "IsClientOnly": true
+          },
+          "DestroyNpcList": [],
+          "DestroyProp": {
+            "GroupID": {},
+            "ID": {},
+            "IsClientOnly": true,
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config"
+            }
+          },
+          "DisactiveVCamOnGraphEnd": true,
+          "IsClientOnly": true,
+          "SwitchCharacterAnchor": {
+            "AnchorName": {
+              "Value": "Anchor1"
+            },
+            "AreaName": {
+              "Value": "LevelArea_P10202_F10202004_G193"
+            },
+            "CharacterUniqueName": "LocalPlayer",
+            "IsClientOnly": true,
+            "IsLocalPlayer": true,
+            "ResetAnimation": true,
+            "ResetCamera": true,
+            "TaskEnabled": true
+          },
+          "SwitchInTime": 0.5,
+          "SwitchKeepTime": 0.5,
+          "SwitchOutTime": 0.5,
+          "TaskEnabled": true,
+          "WaitStreamingFinish": true
+        },
+        {
+          "$type": "RPG.GameCore.CaptureNPCToCharacter, RPG.GameCore.Config",
+          "CharacterUniqueName": {
+            "Value": "guinaifen"
+          },
+          "IsClientOnly": true,
+          "ReleaseIfPerformanceEnd": true,
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 193
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260113,
+              "TextSpeed": 20
+            }
+          ],
+          "TargetBehaviors": [
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            }
+          ],
+          "TaskEnabled": true,
+          "UseTargetBehavior": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayOptionTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "OptionList": [
+            {
+              "OptionIconType": "ChatContinueIcon",
+              "TalkSentenceID": 202260114,
+              "TriggerCustomString": "TalkSentence_202260115"
+            },
+            {
+              "OptionIconType": "ChatContinueIcon",
+              "TalkSentenceID": 202260116,
+              "TriggerCustomString": "TalkSentence_202260117"
+            },
+            {
+              "OptionIconType": "ChatContinueIcon",
+              "TalkSentenceID": 202260118,
+              "TriggerCustomString": "TalkSentence_202260119"
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260115"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.CharacterTriggerFreeStyle, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "NormalizedTransitionDuration": 0.05,
+          "StoryAvatarID": "NPC_Avatar_Maid_Guinaifen_00",
+          "StoryMotionID": 312100231,
+          "TargetAlias": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 193
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260115,
+              "TextSpeed": 20
+            }
+          ],
+          "TargetBehaviors": [
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            }
+          ],
+          "TaskEnabled": true,
+          "UseTargetBehavior": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260120"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260117"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.CharacterTriggerFreeStyle, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "NormalizedTransitionDuration": 0.05,
+          "StoryAvatarID": "NPC_Avatar_Maid_Guinaifen_00",
+          "StoryMotionID": 312100231,
+          "TargetAlias": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 193
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260117,
+              "TextSpeed": 20
+            }
+          ],
+          "TargetBehaviors": [
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            }
+          ],
+          "TaskEnabled": true,
+          "UseTargetBehavior": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260120"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260119"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.CharacterTriggerFreeStyle, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "NormalizedTransitionDuration": 0.05,
+          "StoryAvatarID": "NPC_Avatar_Maid_Guinaifen_00",
+          "StoryMotionID": 312100231,
+          "TargetAlias": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 193
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260119,
+              "TextSpeed": 20
+            }
+          ],
+          "TargetBehaviors": [
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            }
+          ],
+          "TaskEnabled": true,
+          "UseTargetBehavior": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260120"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260120"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260120,
+              "TextSpeed": 20
+            }
+          ],
+          "TargetBehaviors": [
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            }
+          ],
+          "TaskEnabled": true,
+          "UseTargetBehavior": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayOptionTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "OptionList": [
+            {
+              "OptionIconType": "ChatContinueIcon",
+              "TalkSentenceID": 202260121,
+              "TriggerCustomString": "TalkSentence_202260122"
+            },
+            {
+              "OptionIconType": "ChatContinueIcon",
+              "TalkSentenceID": 202260123,
+              "TriggerCustomString": "TalkSentence_202260124"
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260122"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.CharacterTriggerFreeStyle, RPG.GameCore.Config",
+          "CharacterUniqueName": "LocalPlayer",
+          "IsClientOnly": true,
+          "NormalizedTransitionDuration": 0.05,
+          "StoryAvatarID": "NPC_Player",
+          "StoryMotionID": 222,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.CharacterTriggerFreeStyle, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "NormalizedTransitionDuration": 0.05,
+          "StoryAvatarID": "NPC_Avatar_Maid_Guinaifen_00",
+          "StoryMotionID": 312100000,
+          "TargetAlias": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 193
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260122,
+              "TextSpeed": 20
+            }
+          ],
+          "TargetBehaviors": [
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            }
+          ],
+          "TaskEnabled": true,
+          "UseTargetBehavior": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260126"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260124"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.CharacterTriggerFreeStyle, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "NormalizedTransitionDuration": 0.05,
+          "StoryAvatarID": "NPC_Avatar_Maid_Guinaifen_00",
+          "StoryMotionID": 312100000,
+          "TargetAlias": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 193
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260124,
+              "TextSpeed": 20
+            },
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260125,
+              "TextSpeed": 20
+            }
+          ],
+          "TargetBehaviors": [
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            },
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            }
+          ],
+          "TaskEnabled": true,
+          "UseTargetBehavior": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260126"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260126"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260126,
+              "TextSpeed": 20
+            }
+          ],
+          "TargetBehaviors": [
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            }
+          ],
+          "TaskEnabled": true,
+          "UseTargetBehavior": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayOptionTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "OptionList": [
+            {
+              "OptionIconType": "ChatContinueIcon",
+              "TalkSentenceID": 202260127,
+              "TriggerCustomString": "TalkSentence_202260128"
+            },
+            {
+              "OptionIconType": "ChatContinueIcon",
+              "TalkSentenceID": 202260129,
+              "TriggerCustomString": "TalkSentence_202260130"
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260128"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.CharacterTriggerFreeStyle, RPG.GameCore.Config",
+          "CharacterUniqueName": "LocalPlayer",
+          "IsClientOnly": true,
+          "NormalizedTransitionDuration": 0.05,
+          "StoryAvatarID": "NPC_Player",
+          "StoryMotionID": 200,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260128,
+              "TextSpeed": 20
+            }
+          ],
+          "TargetBehaviors": [
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            }
+          ],
+          "TaskEnabled": true,
+          "UseTargetBehavior": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260132"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260130"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.CharacterTriggerFreeStyle, RPG.GameCore.Config",
+          "CharacterUniqueName": "LocalPlayer",
+          "IsClientOnly": true,
+          "NormalizedTransitionDuration": 0.05,
+          "StoryAvatarID": "NPC_Player",
+          "StoryMotionID": 200,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260130,
+              "TextSpeed": 20
+            },
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260131,
+              "TextSpeed": 20
+            }
+          ],
+          "TargetBehaviors": [
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            },
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            }
+          ],
+          "TaskEnabled": true,
+          "UseTargetBehavior": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260132"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260132"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.CharacterTriggerFreeStyle, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "NormalizedTransitionDuration": 0.05,
+          "StoryAvatarID": "NPC_Avatar_Maid_Guinaifen_00",
+          "StoryMotionID": 312100210,
+          "TargetAlias": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 193
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerPermanentEmotion, RPG.GameCore.Config",
+          "EmotionName": "Happy01",
+          "IsClientOnly": true,
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 193
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true,
+          "TransitTime": 0.2
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260132,
+              "TextSpeed": 20
+            }
+          ],
+          "TargetBehaviors": [
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            }
+          ],
+          "TaskEnabled": true,
+          "UseTargetBehavior": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayOptionTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "OptionList": [
+            {
+              "OptionIconType": "ChatContinueIcon",
+              "TalkSentenceID": 202260133,
+              "TriggerCustomString": "TalkSentence_202260134"
+            },
+            {
+              "OptionIconType": "ChatContinueIcon",
+              "TalkSentenceID": 202260135,
+              "TriggerCustomString": "TalkSentence_202260136"
+            },
+            {
+              "OptionIconType": "ChatOutIcon",
+              "TalkSentenceID": 202260142,
+              "TriggerCustomString": "TalkSentence_202260143"
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260134"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.CharacterTriggerFreeStyle, RPG.GameCore.Config",
+          "CharacterUniqueName": "LocalPlayer",
+          "IsClientOnly": true,
+          "NormalizedTransitionDuration": 0.05,
+          "StoryAvatarID": "NPC_Player",
+          "StoryMotionID": 231,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260134,
+              "TextSpeed": 20
+            }
+          ],
+          "TargetBehaviors": [
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            }
+          ],
+          "TaskEnabled": true,
+          "UseTargetBehavior": true
+        },
+        {
+          "$type": "RPG.GameCore.SetMissionCustomValue, RPG.GameCore.Config",
+          "CustomValue": 1,
+          "IsClientOnly": true,
+          "MissionCustomValue": {
+            "ValidValueParamList": [
+              0,
+              1
+            ],
+            "isLocal": true
+          },
+          "SubmissionID": 202170101,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "ALL_TALK_END"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260136"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.StopPermanentEmotion, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 193
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true,
+          "TransitTime": 0.2
+        },
+        {
+          "$type": "RPG.GameCore.CharacterTriggerFreeStyle, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "NormalizedTransitionDuration": 0.05,
+          "StoryAvatarID": "NPC_Avatar_Maid_Guinaifen_00",
+          "StoryMotionID": 312100231,
+          "TargetAlias": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 193
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260136,
+              "TextSpeed": 20
+            },
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260137,
+              "TextSpeed": 20
+            }
+          ],
+          "TargetBehaviors": [
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            },
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            }
+          ],
+          "TaskEnabled": true,
+          "UseTargetBehavior": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayOptionTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "OptionList": [
+            {
+              "OptionIconType": "ChatContinueIcon",
+              "TalkSentenceID": 202260138,
+              "TriggerCustomString": "TalkSentence_202260139"
+            },
+            {
+              "OptionIconType": "ChatOutIcon",
+              "TalkSentenceID": 202260140,
+              "TriggerCustomString": "TalkSentence_202260141"
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260139"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260139,
+              "TextSpeed": 20
+            }
+          ],
+          "TargetBehaviors": [
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            }
+          ],
+          "TaskEnabled": true,
+          "UseTargetBehavior": true
+        },
+        {
+          "$type": "RPG.GameCore.SetMissionCustomValue, RPG.GameCore.Config",
+          "CustomValue": 1,
+          "IsClientOnly": true,
+          "MissionCustomValue": {
+            "ValidValueParamList": [
+              0,
+              1
+            ],
+            "isLocal": true
+          },
+          "SubmissionID": 202170101,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "ALL_TALK_END"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260141"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.StopPermanentEmotion, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 193
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true,
+          "TransitTime": 0.2
+        },
+        {
+          "$type": "RPG.GameCore.CharacterTriggerFreeStyle, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "NormalizedTransitionDuration": 0.05,
+          "StoryAvatarID": "NPC_Avatar_Maid_Guinaifen_00",
+          "StoryMotionID": 312100000,
+          "TargetAlias": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 193
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260141,
+              "TextSpeed": 20
+            }
+          ],
+          "TargetBehaviors": [
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            }
+          ],
+          "TaskEnabled": true,
+          "UseTargetBehavior": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "ALL_TALK_END_2"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_202260143"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.StopPermanentEmotion, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 193
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true,
+          "TransitTime": 0.2
+        },
+        {
+          "$type": "RPG.GameCore.CharacterTriggerFreeStyle, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "NormalizedTransitionDuration": 0.05,
+          "StoryAvatarID": "NPC_Avatar_Maid_Guinaifen_00",
+          "StoryMotionID": 312100000,
+          "TargetAlias": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 193
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 202260143,
+              "TextSpeed": 20
+            }
+          ],
+          "TargetBehaviors": [
+            {
+              "UniqueName": "guinaifen",
+              "UseMouthTalk": true
+            }
+          ],
+          "TaskEnabled": true,
+          "UseTargetBehavior": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "ALL_TALK_END_2"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "ALL_TALK_END"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PerformanceTransition, RPG.GameCore.Config",
+          "ActiveTemplateVirtualCamera": {
+            "IsActive": true,
+            "IsClientOnly": true
+          },
+          "ActiveVirtualCamera": {
+            "AnchorName": "Anchor2",
+            "AreaName": "LevelArea_P10202_F10202004_G193",
+            "CenterPosX": -1,
+            "CenterPosY": -1,
+            "IsClientOnly": true,
+            "TaskEnabled": true,
+            "VCameraDitherMaxDistance": 1
+          },
+          "AdvCreateGroupEntity": {
+            "InstanceIDList": [],
+            "IsClientOnly": true
+          },
+          "AdvDestroyGroupEntity": {
+            "InstanceIDList": [
+              400001
+            ],
+            "IsClientOnly": true,
+            "TaskEnabled": true
+          },
+          "AdvNpcFaceToPlayer": {
+            "ForceToStandBy": true,
+            "FromDialog": true,
+            "GroupID": 193,
+            "GroupNpcID": 400001,
+            "IsClientOnly": true,
+            "NpcLookAtPlayer": true,
+            "PlayerLookAtNpc": true,
+            "StopLookAtOnGraphEnd": true,
+            "TryFaceToFace": true,
+            "TurnBackOnGraphEnd": true,
+            "WaitFinishMode": "WaitFaceAngle"
+          },
+          "CaptureNpcList": [
+            {
+              "CharacterUniqueName": {
+                "Value": "Act202170103_G193N400001"
+              },
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 193
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              },
+              "IsClientOnly": true,
+              "ReleaseIfPerformanceEnd": true
+            }
+          ],
+          "CreateNpcList": [],
+          "CreateProp": {
+            "GroupID": {},
+            "GroupPropID": {},
+            "IsClientOnly": true
+          },
+          "DestroyNpcList": [],
+          "DestroyProp": {
+            "GroupID": {},
+            "ID": {},
+            "IsClientOnly": true,
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config"
+            }
+          },
+          "DisactiveVCamOnGraphEnd": true,
+          "IsClientOnly": true,
+          "SwitchCharacterAnchor": {
+            "AnchorName": {
+              "Value": "Anchor1"
+            },
+            "AreaName": {
+              "Value": "LevelArea_P10202_F10202004_G193"
+            },
+            "CharacterUniqueName": "LocalPlayer",
+            "IsClientOnly": true,
+            "IsLocalPlayer": true,
+            "ResetAnimation": true,
+            "ResetCamera": true,
+            "TaskEnabled": true
+          },
+          "SwitchInTime": 0.5,
+          "SwitchKeepTime": 0.5,
+          "SwitchOutTime": 0.5,
+          "TaskEnabled": true,
+          "WaitStreamingFinish": true
+        },
+        {
+          "$type": "RPG.GameCore.EndPerformance, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "ALL_TALK_END_2"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PerformanceTransition, RPG.GameCore.Config",
+          "ActiveTemplateVirtualCamera": {
+            "IsActive": true,
+            "IsClientOnly": true
+          },
+          "ActiveVirtualCamera": {
+            "AnchorName": "Anchor2",
+            "AreaName": "LevelArea_P10202_F10202004_G193",
+            "CenterPosX": -1,
+            "CenterPosY": -1,
+            "IsClientOnly": true,
+            "TaskEnabled": true,
+            "VCameraDitherMaxDistance": 1
+          },
+          "AdvCreateGroupEntity": {
+            "InstanceIDList": [],
+            "IsClientOnly": true
+          },
+          "AdvDestroyGroupEntity": {
+            "InstanceIDList": [],
+            "IsClientOnly": true
+          },
+          "AdvNpcFaceToPlayer": {
+            "ForceToStandBy": true,
+            "FromDialog": true,
+            "GroupID": 193,
+            "GroupNpcID": 400001,
+            "IsClientOnly": true,
+            "NpcLookAtPlayer": true,
+            "PlayerLookAtNpc": true,
+            "StopLookAtOnGraphEnd": true,
+            "TryFaceToFace": true,
+            "TurnBackOnGraphEnd": true,
+            "WaitFinishMode": "WaitFaceAngle"
+          },
+          "CaptureNpcList": [
+            {
+              "CharacterUniqueName": {
+                "Value": "Act202170103_G193N400001"
+              },
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 193
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              },
+              "IsClientOnly": true,
+              "ReleaseIfPerformanceEnd": true
+            }
+          ],
+          "CreateNpcList": [],
+          "CreateProp": {
+            "GroupID": {},
+            "GroupPropID": {},
+            "IsClientOnly": true
+          },
+          "DestroyNpcList": [],
+          "DestroyProp": {
+            "GroupID": {},
+            "ID": {},
+            "IsClientOnly": true,
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config"
+            }
+          },
+          "DisactiveVCamOnGraphEnd": true,
+          "IsClientOnly": true,
+          "SwitchCharacterAnchor": {
+            "AnchorName": {
+              "Value": "Anchor1"
+            },
+            "AreaName": {
+              "Value": "LevelArea_P10202_F10202004_G193"
+            },
+            "CharacterUniqueName": "LocalPlayer",
+            "IsClientOnly": true,
+            "IsLocalPlayer": true,
+            "ResetAnimation": true,
+            "ResetCamera": true,
+            "TaskEnabled": true
+          },
+          "SwitchInTime": 0.5,
+          "SwitchKeepTime": 0.5,
+          "SwitchOutTime": 0.5,
+          "TaskEnabled": true,
+          "WaitStreamingFinish": true
+        },
+        {
+          "$type": "RPG.GameCore.EndPerformance, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPerformanceEnd, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishLevelGraph, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ]
+}

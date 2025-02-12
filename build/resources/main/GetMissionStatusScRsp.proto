@@ -1,0 +1,16 @@
+syntax = "proto3";
+//
+option java_package = "emu.lunarcore.proto";
+
+import "Mission.proto";
+import "MainMissionCustomValue.proto";
+
+message GetMissionStatusScRsp {
+	repeated uint32 UnfinishedMainMissionIdList = 10;
+	repeated uint32 DisabledMainMissionIdList = 5;
+	repeated MainMissionCustomValue MainMissionMcvList = 4;
+	repeated uint32 FinishedMainMissionIdList = 13;
+	repeated uint32 CurversionFinishedMainMissionIdList = 15;
+	uint32 Retcode = 2;
+	repeated Mission SubMissionStatusList = 14;
+}

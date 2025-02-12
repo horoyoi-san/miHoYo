@@ -1,0 +1,107 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CreateProp, RPG.GameCore.Config",
+          "CreateList": [],
+          "GroupID": {
+            "fixedValue": {
+              "Value": 62
+            }
+          },
+          "GroupPropID": {
+            "fixedValue": {
+              "Value": 300004
+            }
+          },
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupHitBox, RPG.GameCore.Config",
+          "ColliderRelativePath": "HitBox",
+          "IsClientOnly": true,
+          "OnBeHit": [
+            {
+              "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+              "CustomString": {
+                "Value": "Hit_202020152"
+              },
+              "TaskEnabled": true
+            },
+            {
+              "$type": "RPG.GameCore.PropDestruct, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+                "FetchType": "SinglePropByPropID",
+                "SinglePropID": {
+                  "GroupID": {
+                    "fixedValue": {
+                      "Value": 62
+                    }
+                  },
+                  "ID": {
+                    "fixedValue": {
+                      "Value": 300004
+                    }
+                  }
+                }
+              },
+              "TaskEnabled": true
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 62
+                }
+              },
+              "ID": {
+                "fixedValue": {
+                  "Value": 300004
+                }
+              }
+            }
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Hit_202020152"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerPerformance, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "PerformanceID": 202020154,
+          "PerformanceType": "E",
+          "TaskEnabled": true,
+          "ValueSource": {}
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_202020152",
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

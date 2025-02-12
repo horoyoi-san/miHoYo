@@ -1,0 +1,100 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Raid_43211_Open"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.StartDialogueEntityInteract, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "LevelGraphPath": "Config/Level/Props/InteractMode/TriggerEvent_TriggerType_08.json",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 28
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true,
+          "UseOverrideData": true,
+          "ValueSource": {
+            "SharedValues": [
+              {
+                "$type": "RPG.GameCore.SharedString, RPG.GameCore.Config",
+                "Key": "DialogueEntityInteract_AreaPath",
+                "Value": "Level/Common_Adventure/UseInteractNPCFront.prefab"
+              },
+              {
+                "$type": "RPG.GameCore.SharedString, RPG.GameCore.Config",
+                "Key": "DialogueEntityInteract_CameraKey",
+                "Value": "UseInteractNPCFront,UseInteractNPCFront_Camera"
+              },
+              {
+                "$type": "RPG.GameCore.SharedString, RPG.GameCore.Config",
+                "Key": "DialogueEntityInteract_AreaName",
+                "Value": "UseInteractNPCFront"
+              },
+              {
+                "$type": "RPG.GameCore.SharedFloat, RPG.GameCore.Config",
+                "Key": "ResetEntityTransform",
+                "Value": 1
+              }
+            ],
+            "Values": [
+              {
+                "$type": "RPG.GameCore.SharedString, RPG.GameCore.Config",
+                "Key": "DialogueEntityInteract_AreaPath",
+                "Value": "Level/Common_Adventure/UseInteractNPCFront.prefab"
+              },
+              {
+                "$type": "RPG.GameCore.SharedString, RPG.GameCore.Config",
+                "Key": "DialogueEntityInteract_CameraKey",
+                "Value": "UseInteractNPCFront,UseInteractNPCFront_Camera"
+              },
+              {
+                "$type": "RPG.GameCore.SharedString, RPG.GameCore.Config",
+                "Key": "DialogueEntityInteract_AreaName",
+                "Value": "UseInteractNPCFront"
+              },
+              {
+                "$type": "RPG.GameCore.SharedFloat, RPG.GameCore.Config",
+                "Key": "ResetEntityTransform",
+                "Value": 1
+              }
+            ]
+          }
+        },
+        {
+          "$type": "RPG.GameCore.OpenTreasureChallenge, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "OnCancel": [
+            {
+              "$type": "RPG.GameCore.EndDialogueEntityInteract, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "TaskEnabled": true
+            }
+          ],
+          "RaidID": 43211,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

@@ -1,0 +1,171 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.HideEntity, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "IsHide": true,
+          "Target": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 131
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPhotoGraphResult, RPG.GameCore.Config",
+          "CompleteMatch": true,
+          "IsClientOnly": true,
+          "IsLoop": true,
+          "OnFail": [],
+          "OnSuccess": [
+            {
+              "$type": "RPG.GameCore.SetMissionCustomValue, RPG.GameCore.Config",
+              "CustomValue": 1,
+              "IsClientOnly": true,
+              "MissionCustomValue": {
+                "Index": 1,
+                "ValidValueParamList": [
+                  0,
+                  1
+                ]
+              },
+              "SubmissionID": 800210402,
+              "TaskEnabled": true
+            },
+            {
+              "$type": "RPG.GameCore.TriggerPerformance, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "PerformanceID": 800210404,
+              "PerformanceType": "E",
+              "ValueSource": {}
+            },
+            {
+              "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "Key": "Mission_800210402",
+              "MainMissionID": 8002104,
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true,
+          "WaitPhotoResult": [
+            "Target_800210402",
+            "Target_800210402_Sampo"
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPhotoGraphResult, RPG.GameCore.Config",
+          "CompleteMatch": true,
+          "IsClientOnly": true,
+          "IsLoop": true,
+          "OnFail": [],
+          "OnSuccess": [
+            {
+              "$type": "RPG.GameCore.SetMissionCustomValue, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "MissionCustomValue": {
+                "Index": 1,
+                "ValidValueParamList": [
+                  0,
+                  1
+                ],
+                "isLocal": true
+              },
+              "SubmissionID": 800210402,
+              "TaskEnabled": true
+            },
+            {
+              "$type": "RPG.GameCore.TriggerPerformance, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "PerformanceID": 800210404,
+              "PerformanceType": "E",
+              "ValueSource": {}
+            },
+            {
+              "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "Key": "Mission_800210402",
+              "MainMissionID": 8002104,
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true,
+          "WaitPhotoResult": [
+            "Target_800210402"
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPhotoGraphResult, RPG.GameCore.Config",
+          "CompleteMatch": true,
+          "IsClientOnly": true,
+          "IsLoop": true,
+          "OnFail": [],
+          "OnSuccess": [
+            {
+              "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+              "CustomString": {
+                "Value": "800210402_Sampo"
+              },
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true,
+          "WaitPhotoResult": [
+            "Target_800210402_Sampo"
+          ]
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "800210402_Sampo"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayMissionTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 2,
+              "TalkSentenceID": 800210303,
+              "TextSpeed": 20
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

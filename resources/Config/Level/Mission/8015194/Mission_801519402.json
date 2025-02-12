@@ -1,0 +1,48 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_801519402"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "MaxAdvencePerTick": -1,
+          "TaskEnabled": true,
+          "WaitTime": {
+            "fixedValue": {
+              "Value": 0.5000000004656613
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ShowTransitionLoadingUI, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Name": "Ui.Heliobus.Transition.HeliobusTransitionDialog",
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowUI, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Name": "Ui.Heliobus.SNS.SNSMain.HeliobusSNSMainPage",
+          "OnUIEnter": [
+            {
+              "$type": "RPG.GameCore.ExitTransitionLoadingUI, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

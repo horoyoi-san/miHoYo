@@ -1,0 +1,52 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_301140503"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList, RPG.GameCore.Config",
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.CreateNPC, RPG.GameCore.Config",
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 15
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400014
+                }
+              },
+              "IsClientOnly": true,
+              "TaskEnabled": true
+            }
+          ],
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetNpcExists, RPG.GameCore.Config",
+            "GroupID": 15,
+            "GroupNpcID": 400014,
+            "IsClientOnly": true,
+            "TaskEnabled": true
+          },
+          "SuccessTaskList": [],
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_301140503",
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

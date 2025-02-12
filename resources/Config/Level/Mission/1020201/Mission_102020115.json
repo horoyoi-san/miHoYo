@@ -1,0 +1,66 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger, RPG.GameCore.Config",
+          "DestroyAfterTriggered": true,
+          "IsClientOnly": true,
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.PlayMissionTalk, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "SimpleTalkList": [
+                {
+                  "ProtectTime": 2,
+                  "TalkSentenceID": 202111005,
+                  "TextSpeed": 20
+                },
+                {
+                  "ProtectTime": 2,
+                  "TalkSentenceID": 202111006,
+                  "TextSpeed": 20
+                },
+                {
+                  "ProtectTime": 2,
+                  "TalkSentenceID": 202111007,
+                  "TextSpeed": 20
+                }
+              ],
+              "TaskEnabled": true
+            },
+            {
+              "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "Key": "Mission_102020115",
+              "TaskEnabled": true
+            }
+          ],
+          "SkipFakeAvatar": true,
+          "TargetGroupID": {},
+          "TargetID": {},
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 18
+                }
+              },
+              "ID": {
+                "fixedValue": {
+                  "Value": 300004
+                }
+              }
+            }
+          },
+          "TargetTypes": [],
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

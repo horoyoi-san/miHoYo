@@ -1,0 +1,41 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions, RPG.GameCore.Config",
+          "CustomValueMainMissionIDList": [],
+          "IsClientOnly": true,
+          "MainMissionIDList": [],
+          "PerformanceIDDsList": [],
+          "PerformanceIDList": [],
+          "TaskEnabled": true,
+          "TaskIDList": [
+            103150101
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList, RPG.GameCore.Config",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareSubMissionState, RPG.GameCore.Config",
+            "IsClientOnly": true,
+            "SubMissionID": 103150101,
+            "SubMissionState": "Finish",
+            "TaskEnabled": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "Key": "Mission_103150116",
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

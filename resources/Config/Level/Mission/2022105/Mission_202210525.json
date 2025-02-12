@@ -1,0 +1,94 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.TriggerPerformance, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "PerformanceID": 202210526,
+          "PerformanceType": "C",
+          "TaskEnabled": true,
+          "ValueSource": {}
+        },
+        {
+          "$type": "RPG.GameCore.PlayFullScreenTransfer, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDuration": 3,
+          "PostDuration": -1,
+          "PrevDuration": 0.5,
+          "TaskEnabled": true,
+          "TextInfo": {
+            "TextList": [
+              {
+                "TalkSentenceID": 222110158
+              },
+              {
+                "TalkSentenceID": 222110159
+              },
+              {
+                "TalkSentenceID": 222110160
+              }
+            ]
+          },
+          "Type": "Black"
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList, RPG.GameCore.Config",
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.PlayFullScreenTransfer, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "KeepDuration": 0.1,
+              "PostDuration": 0.5,
+              "PrevDuration": -1,
+              "TaskEnabled": true,
+              "Type": "Black"
+            },
+            {
+              "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "KeepScreenTransferUntilGroupRefresh": true,
+              "Key": "Mission_202210525",
+              "TaskEnabled": true
+            }
+          ],
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareVersionFinalMainMission, RPG.GameCore.Config",
+            "IsClientOnly": true,
+            "MainMissionID": 2022105,
+            "TaskEnabled": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.PlayFullScreenTransfer, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "KeepDuration": 1,
+              "PostDuration": 0.5,
+              "PrevDuration": -1,
+              "TaskEnabled": true,
+              "TextInfo": {
+                "TextList": [
+                  {
+                    "TalkSentenceID": 100000005
+                  }
+                ]
+              },
+              "Type": "Black"
+            },
+            {
+              "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "KeepScreenTransferUntilGroupRefresh": true,
+              "Key": "Mission_202210525",
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

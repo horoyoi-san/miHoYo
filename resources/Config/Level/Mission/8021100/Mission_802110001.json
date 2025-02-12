@@ -1,0 +1,97 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_802110001"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TutorialTaskUnlock, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true,
+          "TriggerParam": {
+            "Value": "5150"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerDrinkMakerBartendInMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "OnBartendFail": [
+            {
+              "$type": "RPG.GameCore.TriggerPerformance, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "PerformanceID": 802110002,
+              "PerformanceType": "D",
+              "TaskEnabled": true,
+              "ValueSource": {}
+            },
+            {
+              "$type": "RPG.GameCore.ShowUI, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "Name": "Ui.DrinkMaker.WorkBook.DrinkMakerWorkBookPage",
+              "TaskEnabled": true,
+              "WaitForExit": true
+            },
+            {
+              "$type": "RPG.GameCore.TriggerPerformance, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "PerformanceID": 802110003,
+              "PerformanceType": "D",
+              "TaskEnabled": true,
+              "ValueSource": {}
+            },
+            {
+              "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "KeepScreenTransferUntilGroupRefresh": true,
+              "Key": "Mission_802110001",
+              "TaskEnabled": true
+            }
+          ],
+          "OnBartendSuccess": [
+            {
+              "$type": "RPG.GameCore.TriggerPerformance, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "PerformanceID": 802110002,
+              "PerformanceType": "D",
+              "TaskEnabled": true,
+              "ValueSource": {}
+            },
+            {
+              "$type": "RPG.GameCore.ShowUI, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "Name": "Ui.DrinkMaker.WorkBook.DrinkMakerWorkBookPage",
+              "OnUIEnter": [],
+              "TaskEnabled": true,
+              "WaitForExit": true
+            },
+            {
+              "$type": "RPG.GameCore.TriggerPerformance, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "PerformanceID": 802110003,
+              "PerformanceType": "D",
+              "TaskEnabled": true,
+              "ValueSource": {}
+            },
+            {
+              "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "KeepScreenTransferUntilGroupRefresh": true,
+              "Key": "Mission_802110001",
+              "TaskEnabled": true
+            }
+          ],
+          "RequestID": 1000,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

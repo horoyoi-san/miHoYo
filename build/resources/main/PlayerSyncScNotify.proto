@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option java_package = "emu.lunarcore.proto";
+
+import "Equipment.proto";
+import "MissionSync.proto";
+import "BoardDataSync.proto";
+import "Relic.proto";
+import "AvatarSync.proto";
+import "ItemList.proto";
+import "PlayerBasicInfo.proto";
+import "Material.proto";
+import "Quest.proto";
+import "MultiPathAvatarInfo.proto";
+import "WaitDelResource.proto";
+
+message PlayerSyncScNotify {
+	AvatarSync avatar_sync = 8;
+	MissionSync mission_sync = 2;
+	repeated Quest quest_list = 15;
+	repeated Relic relic_list = 12;
+	PlayerBasicInfo basic_info = 14;
+	repeated Material material_list = 6;
+	uint32 total_achievement_exp = 1356;
+	BoardDataSync board_data_sync = 71;
+	repeated Equipment equipment_list = 4;
+	repeated uint32 del_relic_list = 1;//7
+	repeated uint32 new_item_hint_list = 645;
+	repeated uint32 del_equipment_list = 7;//1
+	repeated WaitDelResource wait_del_resource_list = 10;
+	repeated MultiPathAvatarInfo multi_path_avatar_info_list = 120;
+}
+
+

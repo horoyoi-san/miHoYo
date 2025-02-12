@@ -1,0 +1,70 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions, RPG.GameCore.Config",
+          "CustomValueMainMissionIDList": [],
+          "IsClientOnly": true,
+          "MainMissionIDList": [],
+          "PerformanceIDDsList": [],
+          "PerformanceIDList": [],
+          "TaskEnabled": true,
+          "TaskIDList": [
+            103030310
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList, RPG.GameCore.Config",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareSubMissionState, RPG.GameCore.Config",
+            "IsClientOnly": true,
+            "SubMissionID": 103030310,
+            "SubMissionState": "Finish",
+            "TaskEnabled": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.ConsumeMissionItem, RPG.GameCore.Config",
+              "IsAutoConsume": true,
+              "IsClientOnly": true,
+              "SimpleTalk": {
+                "ProtectTime": 0.8,
+                "TextSpeed": 20
+              },
+              "SubMissionID": 103030323,
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_103030323_item"
+          },
+          "GoNextImmediately": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.ConsumeMissionItem, RPG.GameCore.Config",
+          "IsAutoConsume": true,
+          "IsClientOnly": true,
+          "SimpleTalk": {
+            "ProtectTime": 0.8,
+            "TextSpeed": 20
+          },
+          "SubMissionID": 103030323,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

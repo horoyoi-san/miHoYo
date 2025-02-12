@@ -1,0 +1,76 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "202170206_ShowReading"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowReading, RPG.GameCore.Config",
+          "BookID": {
+            "fixedValue": {
+              "Value": 190515
+            }
+          },
+          "IsClientOnly": true,
+          "ShouldPauseGame": true,
+          "TaskEnabled": true,
+          "WaitForExit": true
+        },
+        {
+          "$type": "RPG.GameCore.SetMissionCustomValue, RPG.GameCore.Config",
+          "CustomValue": 1,
+          "IsClientOnly": true,
+          "MissionCustomValue": {
+            "Index": 1,
+            "ValidValueParamList": [
+              0,
+              1
+            ]
+          },
+          "SubmissionID": 202170206,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "202170206_PerformanceEnd"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.SetMissionCustomValue, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "MissionCustomValue": {
+            "Index": 1,
+            "ValidValueParamList": [
+              0,
+              1
+            ]
+          },
+          "SubmissionID": 202170206,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_202170206",
+          "MainMissionID": 2021702,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

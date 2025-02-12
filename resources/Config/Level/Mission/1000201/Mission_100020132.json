@@ -1,0 +1,87 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CreateProp, RPG.GameCore.Config",
+          "CreateList": [],
+          "GroupID": {
+            "fixedValue": {
+              "Value": 4
+            }
+          },
+          "GroupPropID": {
+            "fixedValue": {
+              "Value": 300021
+            }
+          },
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropStateExecute, RPG.GameCore.Config",
+          "Execute": [
+            {
+              "$type": "RPG.GameCore.PerformanceTransition, RPG.GameCore.Config",
+              "ActiveVirtualCamera": {
+                "CenterPosX": -1,
+                "CenterPosY": -1,
+                "IsActive": true,
+                "IsClientOnly": true,
+                "VCameraDitherMaxDistance": 1
+              },
+              "CaptureNpcList": [],
+              "CreateNpcList": [],
+              "DestroyNpcList": [],
+              "DisactiveVCamOnGraphEnd": true,
+              "IsClientOnly": true,
+              "SwitchCharacterAnchor": {
+                "AnchorName": {
+                  "Value": "CheckPoint04"
+                },
+                "AreaName": {
+                  "Value": "LevelArea_P20002_F20002001_G1"
+                },
+                "CharacterUniqueName": "LocalPlayer",
+                "IsClientOnly": true,
+                "IsLocalPlayer": true,
+                "ResetAnimation": true,
+                "ResetCamera": true,
+                "TaskEnabled": true
+              },
+              "SwitchInTime": 0.5,
+              "SwitchKeepTime": 0.5,
+              "SwitchOutTime": 0.5,
+              "TaskEnabled": true
+            }
+          ],
+          "IsClientOnly": true,
+          "State": "CheckPointEnable",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 1
+                }
+              },
+              "ID": {
+                "fixedValue": {
+                  "Value": 300021
+                }
+              }
+            }
+          },
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

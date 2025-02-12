@@ -1,0 +1,63 @@
+{
+  "AbilityList": [
+    {
+      "Name": "LocalPlayer_Sunday_NormalAtk01",
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange"
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.LookAt"
+            },
+            {
+              "$type": "RPG.GameCore.AdventureTriggerAnimStateWithMove"
+            },
+            {
+              "$type": "RPG.GameCore.WaitAnimState"
+            },
+            {
+              "$type": "RPG.GameCore.AdventureFireProjectile"
+            },
+            {
+              "$type": "RPG.GameCore.AdventureFireProjectile",
+              "OnProjectileLifetimeFinish": [
+                {
+                  "$type": "RPG.GameCore.AdventureTriggerAttack",
+                  "TriggerBattle": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "LocalPlayer_Sunday_MazeSkill",
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.AdventureTriggerAnimStateWithMove"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect"
+        },
+        {
+          "$type": "RPG.GameCore.AddMazeBuff",
+          "ID": 131301,
+          "LifeTime": {
+            "FixedValue": null,
+            "IsDynamic": false
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AdventureSubmitSkill"
+        }
+      ]
+    }
+  ]
+}

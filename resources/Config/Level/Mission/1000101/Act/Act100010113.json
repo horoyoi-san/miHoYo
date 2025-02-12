@@ -1,0 +1,462 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CaptureLocalPlayer, RPG.GameCore.Config",
+          "CharacterUniqueName": "LocalPlayer",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LevelPerformanceInitialize, RPG.GameCore.Config",
+          "CreateCharacterList": [],
+          "EntityVisiableList": [],
+          "HideMonster": true,
+          "HideMunicipalCrowd": true,
+          "HideMunicipalOther": true,
+          "HideMunicipalPedestrian": true,
+          "IsClientOnly": true,
+          "MarkStreamingItems": [],
+          "PerformanceType": "D",
+          "ResetEnvironment": true,
+          "ResetMonster": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayScreenTransfer, RPG.GameCore.Config",
+          "CustomTime": 0.5,
+          "IsClientOnly": true,
+          "Mode": "SwitchOut",
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.SwitchCharacterAnchor, RPG.GameCore.Config",
+          "AnchorName": {
+            "Value": "Anchor6"
+          },
+          "AreaName": {
+            "Value": "LevelArea_P20001_F20001001_G27"
+          },
+          "CharacterUniqueName": "LocalPlayer",
+          "IsClientOnly": true,
+          "IsLocalPlayer": true,
+          "ResetAnimation": true,
+          "ResetCamera": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.AdvNpcFaceToPlayer, RPG.GameCore.Config",
+          "FinishImmadiate": true,
+          "ForceToStandBy": true,
+          "FromDialog": true,
+          "IsClientOnly": true,
+          "NpcLookAtPlayer": true,
+          "PlayerLookAtNpc": true,
+          "StopLookAtOnGraphEnd": true,
+          "TaskEnabled": true,
+          "TryFaceToFace": true,
+          "TurnBackOnGraphEnd": true,
+          "WaitFinishMode": "WaitFaceAngle"
+        },
+        {
+          "$type": "RPG.GameCore.ActiveVirtualCamera, RPG.GameCore.Config",
+          "AnchorName": "Camera_1000101_M1",
+          "AreaName": "MainMission_2000101",
+          "BlendConfig": {
+            "BlendType": "Cut",
+            "ExportToJson": true,
+            "FOVSmoothDampTime": -1,
+            "FrameBlendDuration": 1,
+            "FrameBlendWeightStart": 1
+          },
+          "CenterPosX": -1,
+          "CenterPosY": -1,
+          "IsActive": true,
+          "IsClientOnly": true,
+          "TaskEnabled": true,
+          "VCameraDitherMaxDistance": 1
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "MaxAdvencePerTick": -1,
+          "TaskEnabled": true,
+          "WaitTime": {
+            "fixedValue": {
+              "Value": 0.5000000004656613
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.CharacterHeadLookAt, RPG.GameCore.Config",
+          "CharacterUniqueName": "100010113",
+          "Constraint": {
+            "PitchMax": -1,
+            "YawMax": -1
+          },
+          "Duration": -1,
+          "IsClientOnly": true,
+          "TargetAnchorName": "Anchor8",
+          "TargetAreaName": "LevelArea_P20001_F20001001_G27",
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayScreenTransfer, RPG.GameCore.Config",
+          "CustomTime": 0.5,
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 200011501,
+              "TextSpeed": 20
+            }
+          ],
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 200011502,
+              "TextSpeed": 20
+            },
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 200011503,
+              "TextSpeed": 20
+            }
+          ],
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerSound, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "SoundName": {
+            "Value": "Ev_sfx_hertaspacestation_n1_error"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.AnimSetParameter, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "ParameterName": "TriggerHack",
+          "ParameterType": "Trigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 50
+                }
+              },
+              "ID": {
+                "fixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.ClearTalkUI, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.ActiveVirtualCamera, RPG.GameCore.Config",
+          "AnchorName": "Camera_1000101_M3",
+          "AreaName": "MainMission_2000101",
+          "BlendConfig": {
+            "BlendTime": 1,
+            "BlendType": "Cut",
+            "ExportToJson": true,
+            "FOVSmoothDampTime": -1,
+            "FrameBlendDuration": 1,
+            "FrameBlendWeightStart": 1
+          },
+          "CenterPosX": -1,
+          "CenterPosY": -1,
+          "IsActive": true,
+          "IsClientOnly": true,
+          "TaskEnabled": true,
+          "VCameraDitherMaxDistance": 1,
+          "WaitBlendFinish": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "MaxAdvencePerTick": -1,
+          "TaskEnabled": true,
+          "WaitTime": {
+            "fixedValue": {
+              "Value": 4
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ActiveVirtualCamera, RPG.GameCore.Config",
+          "AnchorName": "Camera_1000101_M4",
+          "AreaName": "MainMission_2000101",
+          "BlendConfig": {
+            "BlendTime": 1,
+            "BlendType": "Cut",
+            "ExportToJson": true,
+            "FOVSmoothDampTime": -1,
+            "FrameBlendDuration": 1,
+            "FrameBlendWeightStart": 1
+          },
+          "CenterPosX": -1,
+          "CenterPosY": -1,
+          "IsActive": true,
+          "IsClientOnly": true,
+          "TaskEnabled": true,
+          "VCameraDitherMaxDistance": 1,
+          "WaitBlendFinish": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "MaxAdvencePerTick": -1,
+          "TaskEnabled": true,
+          "WaitTime": {
+            "fixedValue": {
+              "Value": 3
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ActiveVirtualCamera, RPG.GameCore.Config",
+          "AnchorName": "Camera_1000101_M5",
+          "AreaName": "MainMission_2000101",
+          "BlendConfig": {
+            "BlendTime": 1,
+            "BlendType": "Cut",
+            "ExportToJson": true,
+            "FOVSmoothDampTime": -1,
+            "FrameBlendDuration": 1,
+            "FrameBlendWeightStart": 1
+          },
+          "CenterPosX": -1,
+          "CenterPosY": -1,
+          "IsActive": true,
+          "IsClientOnly": true,
+          "TaskEnabled": true,
+          "VCameraDitherMaxDistance": 1,
+          "WaitBlendFinish": true
+        },
+        {
+          "$type": "RPG.GameCore.CharacterHeadLookAt, RPG.GameCore.Config",
+          "CharacterUniqueName": "100010113",
+          "Constraint": {
+            "PitchMax": -1,
+            "YawMax": -1
+          },
+          "Duration": -1,
+          "IsClientOnly": true,
+          "TargetAnchorName": "Anchor7",
+          "TargetAreaName": "LevelArea_P20001_F20001001_G27",
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "MaxAdvencePerTick": -1,
+          "TaskEnabled": true,
+          "WaitTime": {
+            "fixedValue": {
+              "Value": 1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AdvEntityFaceTo, RPG.GameCore.Config",
+          "EnableLookAt": true,
+          "EnableSteer": true,
+          "IsClientOnly": true,
+          "LookAtPoint": "Head",
+          "SourceType": {
+            "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer, RPG.GameCore.Config",
+            "IncludeStoryPlayer": true
+          },
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 14
+                }
+              },
+              "ID": {
+                "fixedValue": {
+                  "Value": 300015
+                }
+              }
+            }
+          },
+          "TaskEnabled": true,
+          "TurnBackOnGraphEnd": true,
+          "WaitFinishMode": "WaitAnimFinish"
+        },
+        {
+          "$type": "RPG.GameCore.ShowTalkUI, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Show": true,
+          "ShowDialogControlUI": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 200011504,
+              "TextSpeed": 20
+            }
+          ],
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.AdventureCameraLookAt, RPG.GameCore.Config",
+          "ExtraFreelook3rdConfig": {
+            "BaseChangeParam": {
+              "CenterPos": {
+                "magnitude": 0.707106769,
+                "normalized": {
+                  "magnitude": 0.99999994,
+                  "normalized": {
+                    "magnitude": 1,
+                    "sqrMagnitude": 1.00000012,
+                    "x": 0.7071068,
+                    "y": 0.7071068
+                  },
+                  "sqrMagnitude": 0.99999994,
+                  "x": 0.707106769,
+                  "y": 0.707106769
+                },
+                "sqrMagnitude": 0.5,
+                "x": 0.5,
+                "y": 0.5
+              },
+              "ChangeCurvePath": "Camera/BlendCurve/Blend_N1CameraTest.asset",
+              "ExportToJson": true,
+              "RecoveryCurvePath": "Camera/BlendCurve/Blend_N1CameraTest.asset",
+              "RecoveryTime": 1,
+              "Time": 1,
+              "ZoomRatio": 1.2
+            },
+            "ExportToJson": true
+          },
+          "FollowLookAtTarget": true,
+          "IsClientOnly": true,
+          "LookAtDuration": 1,
+          "LookAtTargetAnchorName": {
+            "Value": "Waypoint_2"
+          },
+          "LookAtTargetAreaName": {
+            "Value": "MainMission_2000101"
+          },
+          "LookAtTransitionCurvePath": "Camera/BlendCurve/Blend_N1CameraTest.asset",
+          "LookAtTransitionDuration": 1,
+          "MaxAngle": 360,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayScreenTransfer, RPG.GameCore.Config",
+          "CustomTime": 0.5,
+          "IsClientOnly": true,
+          "Mode": "SwitchOut",
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.ActiveVirtualCamera, RPG.GameCore.Config",
+          "AnchorName": "Camera_1000101_M1",
+          "AreaName": "MainMission_2000101",
+          "BlendConfig": {
+            "BlendType": "Cut",
+            "ExportToJson": true,
+            "FOVSmoothDampTime": -1,
+            "FrameBlendDuration": 1,
+            "FrameBlendWeightStart": 1
+          },
+          "CenterPosX": -1,
+          "CenterPosY": -1,
+          "IsClientOnly": true,
+          "TaskEnabled": true,
+          "VCameraDitherMaxDistance": 1
+        },
+        {
+          "$type": "RPG.GameCore.DestroyNPC, RPG.GameCore.Config",
+          "GroupID": 27,
+          "GroupNpcID": 400003,
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.CreateNPC, RPG.GameCore.Config",
+          "GroupID": {
+            "fixedValue": {
+              "Value": 27
+            }
+          },
+          "GroupNpcID": {
+            "fixedValue": {
+              "Value": 400004
+            }
+          },
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "MaxAdvencePerTick": -1,
+          "TaskEnabled": true,
+          "WaitTime": {
+            "fixedValue": {
+              "Value": 1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.EndPerformance, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPerformanceEnd, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishLevelGraph, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ]
+}

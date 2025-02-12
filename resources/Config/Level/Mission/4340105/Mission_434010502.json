@@ -1,0 +1,41 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.SetFloorCustomFloat, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Name": {
+            "Value": "FCV_Mute_SlotMachine"
+          },
+          "TaskEnabled": true,
+          "Value": {}
+        }
+      ]
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChange, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "IsLoop": true,
+          "Name": {
+            "Value": "FCV_PlaySlotMachine"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "Key": "Mission_434010502",
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

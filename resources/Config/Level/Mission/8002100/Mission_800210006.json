@@ -1,0 +1,78 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_800210006"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_800210006",
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.ShowTutorialUI, RPG.GameCore.Config",
+          "ForceShowDialog": true,
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitUINodeOpen, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "NodeID": "MazeMainPage.MazeEventBtn",
+          "SkipCheck": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideText, RPG.GameCore.Config",
+          "Follow": true,
+          "GuideResID": 5,
+          "ID": 1,
+          "IsClientOnly": true,
+          "PCGuide": {
+            "TextPath": "Root/Text"
+          },
+          "Show": true,
+          "TaskEnabled": true,
+          "Text": "TutorialTextmap_503801",
+          "TextPath": "Root/Text"
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "MaxAdvencePerTick": -1,
+          "TaskEnabled": true,
+          "WaitTime": {
+            "fixedValue": {
+              "Value": 3
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideText, RPG.GameCore.Config",
+          "Follow": true,
+          "GuideResID": 5,
+          "ID": 1,
+          "IsClientOnly": true,
+          "PCGuide": {
+            "TextPath": "Root/Text"
+          },
+          "TaskEnabled": true,
+          "Text": "TutorialTextmap_503802",
+          "TextPath": "Root/Text"
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

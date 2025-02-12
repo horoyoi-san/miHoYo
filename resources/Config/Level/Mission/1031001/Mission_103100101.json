@@ -1,0 +1,55 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.TriggerPerformance, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "PerformanceID": 103100101,
+          "PerformanceType": "D",
+          "TaskEnabled": true,
+          "ValueSource": {}
+        },
+        {
+          "$type": "RPG.GameCore.PerformanceEndSeq, RPG.GameCore.Config",
+          "Cases": [
+            {
+              "OnSuccess": [
+                {
+                  "$type": "RPG.GameCore.SwitchCharacterAnchorV2, RPG.GameCore.Config",
+                  "IsClientOnly": true,
+                  "SwitchCharacterAnchorConfig": {
+                    "AnchorName": {
+                      "Value": "Anchor1"
+                    },
+                    "AreaName": {
+                      "Value": "LevelArea_P10301_F10301001_G168"
+                    },
+                    "CharacterUniqueName": "LocalPlayer",
+                    "IsClientOnly": true,
+                    "IsLocalPlayer": true,
+                    "ResetAnimation": true,
+                    "ResetCamera": true,
+                    "TaskEnabled": true
+                  },
+                  "TaskEnabled": true
+                }
+              ]
+            }
+          ],
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_103100101",
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

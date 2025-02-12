@@ -1,0 +1,304 @@
+{
+  "ConfigEntityPath": "Config/ConfigEntity/SummonUnit/SummonUnit_Common_TeamField_Entity.json",
+  "Duration": {
+    "fixedValue": {
+      "Value": -1
+    }
+  },
+  "GroupConfigName": "Field",
+  "OnBeReplaced": [
+    {
+      "$type": "RPG.GameCore.RemoveEffect, RPG.GameCore.Config",
+      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_PlayerBoy_30/Servant/Eff_Servant_PlayerBoyServant_30_MazeSkill_01.prefab",
+      "FadeOutRegionEnd": -1,
+      "FadeOutRegionStart": -1,
+      "IsClientOnly": true,
+      "IsNeedFadeOut": true,
+      "TargetType": {
+        "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+        "Alias": "Caster"
+      },
+      "TaskEnabled": true
+    }
+  ],
+  "OnCreate": [
+    {
+      "$type": "RPG.GameCore.RemoveEffect, RPG.GameCore.Config",
+      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_PlayerBoy_30/Servant/Eff_Servant_PlayerBoyServant_30_MazeSkill_01.prefab",
+      "FadeOutRegionEnd": -1,
+      "FadeOutRegionStart": -1,
+      "IsClientOnly": true,
+      "TargetType": {
+        "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+        "Alias": "Caster"
+      },
+      "TaskEnabled": true
+    },
+    {
+      "$type": "RPG.GameCore.TriggerEffect, RPG.GameCore.Config",
+      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_PlayerBoy_30/Servant/Eff_Servant_PlayerBoyServant_30_MazeSkill_01.prefab",
+      "IsClientOnly": true,
+      "IsNeedFadeIn": true,
+      "MaxMutexCount": 1,
+      "ParamEntityUsage": "LookAt",
+      "Scale": {
+        "magnitude": 1.73205078,
+        "normalized": {
+          "magnitude": 0.99999994,
+          "normalized": {
+            "magnitude": 1.00000012,
+            "sqrMagnitude": 1.00000024,
+            "x": -0.5773503,
+            "y": -0.5773503,
+            "z": -0.5773503
+          },
+          "sqrMagnitude": 0.99999994,
+          "x": -0.577350259,
+          "y": -0.577350259,
+          "z": -0.577350259
+        },
+        "sqrMagnitude": 3,
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "TargetType": {
+        "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+        "Alias": "Caster"
+      },
+      "TaskEnabled": true,
+      "TowardMaxPitchAngle": 90
+    },
+    {
+      "$type": "RPG.GameCore.TriggerEffect, RPG.GameCore.Config",
+      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_PlayerBoy_30/Servant/Eff_Servant_PlayerBoyServant_30_MazeSkill_Start.prefab",
+      "IsClientOnly": true,
+      "IsNeedFadeIn": true,
+      "MaxMutexCount": 1,
+      "ParamEntityUsage": "LookAt",
+      "Scale": {
+        "magnitude": 1.73205078,
+        "normalized": {
+          "magnitude": 0.99999994,
+          "normalized": {
+            "magnitude": 1.00000012,
+            "sqrMagnitude": 1.00000024,
+            "x": -0.5773503,
+            "y": -0.5773503,
+            "z": -0.5773503
+          },
+          "sqrMagnitude": 0.99999994,
+          "x": -0.577350259,
+          "y": -0.577350259,
+          "z": -0.577350259
+        },
+        "sqrMagnitude": 3,
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "TargetType": {
+        "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+        "Alias": "Caster"
+      },
+      "TaskEnabled": true,
+      "TowardMaxPitchAngle": 90
+    },
+    {
+      "$type": "RPG.GameCore.WaitSecond, RPG.GameCore.Config",
+      "IsClientOnly": true,
+      "MaxAdvencePerTick": -1,
+      "TaskEnabled": true,
+      "WaitTime": {
+        "fixedValue": {
+          "Value": 0.25000000023283064
+        }
+      }
+    },
+    {
+      "$type": "RPG.GameCore.RadialBlurEffect, RPG.GameCore.Config",
+      "Active": true,
+      "BlurFeather": 0.2,
+      "BlurRadius": 1,
+      "BlurStart": 0.1,
+      "BlurX": 0.5,
+      "BlurY": 0.4,
+      "Duration": 0.1,
+      "IsClientOnly": true,
+      "Iteration": 4,
+      "TargetType": {
+        "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+        "Alias": "Caster"
+      },
+      "TaskEnabled": true
+    },
+    {
+      "$type": "RPG.GameCore.SetSummonUnitTriggerEnable, RPG.GameCore.Config",
+      "Enable": true,
+      "IsClientOnly": true,
+      "SummonUnit": {
+        "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+        "Alias": "Caster"
+      },
+      "TaskEnabled": true,
+      "TriggerNames": [
+        "PlayerBoy_30_FieldTrigger",
+        "PlayerBoy_30_FieldTrigger_Prop"
+      ]
+    }
+  ],
+  "OnDestroy": [
+    {
+      "$type": "RPG.GameCore.RemoveEffect, RPG.GameCore.Config",
+      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_PlayerBoy_30/Servant/Eff_Servant_PlayerBoyServant_30_MazeSkill_01.prefab",
+      "FadeOutRegionEnd": -1,
+      "FadeOutRegionStart": -1,
+      "IsClientOnly": true,
+      "IsNeedFadeOut": true,
+      "TargetType": {
+        "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+        "Alias": "Caster"
+      },
+      "TaskEnabled": true
+    }
+  ],
+  "ResidentEffects": [
+    {
+      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_PlayerBoy_30/Servant/Eff_Servant_PlayerBoyServant_30_MazeSkill_Room.prefab",
+      "IsClientOnly": true,
+      "IsNeedFadeIn": true,
+      "MaxMutexCount": 1,
+      "ParamEntityUsage": "LookAt",
+      "Scale": {
+        "magnitude": 1.73205078,
+        "normalized": {
+          "magnitude": 0.99999994,
+          "normalized": {
+            "magnitude": 1.00000012,
+            "sqrMagnitude": 1.00000024,
+            "x": -0.5773503,
+            "y": -0.5773503,
+            "z": -0.5773503
+          },
+          "sqrMagnitude": 0.99999994,
+          "x": -0.577350259,
+          "y": -0.577350259,
+          "z": -0.577350259
+        },
+        "sqrMagnitude": 3,
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "TaskEnabled": true,
+      "TowardMaxPitchAngle": 90
+    }
+  ],
+  "ShoesType": "boot",
+  "TickLodTemplateName": "DefaultStaticEntity",
+  "TriggerConfig": {
+    "CustomTriggers": [
+      {
+        "CenterOffset": {
+          "magnitude": 2,
+          "normalized": {
+            "magnitude": 1,
+            "sqrMagnitude": 1,
+            "y": 1
+          },
+          "sqrMagnitude": 4,
+          "y": 2
+        },
+        "ColliderRelativePath": "Trigger",
+        "NeedRaycast": true,
+        "OnTriggerEnter": [
+          {
+            "$type": "RPG.GameCore.AddMazeBuff, RPG.GameCore.Config",
+            "ID": 800701,
+            "IsClientOnly": true,
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+              "Alias": "TaskActionTarget"
+            },
+            "TaskEnabled": true
+          }
+        ],
+        "OnTriggerExit": [
+          {
+            "$type": "RPG.GameCore.RemoveMazeBuff, RPG.GameCore.Config",
+            "ID": 800701,
+            "IsClientOnly": true,
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+              "Alias": "TaskActionTarget"
+            },
+            "TaskEnabled": true
+          }
+        ],
+        "OnlyCheckFilterOnEnter": true,
+        "Radius": {
+          "fixedValue": {
+            "Value": 9.200000000186265
+          }
+        },
+        "RayStartOffsetY": 1,
+        "SkipFakeAvatar": true,
+        "TargetTypes": [
+          "NPCMonster"
+        ],
+        "TriggerName": "PlayerBoy_30_FieldTrigger",
+        "UseVerticalBound": true
+      },
+      {
+        "CenterOffset": {
+          "magnitude": 2,
+          "normalized": {
+            "magnitude": 1,
+            "sqrMagnitude": 1,
+            "y": 1
+          },
+          "sqrMagnitude": 4,
+          "y": 2
+        },
+        "ColliderRelativePath": "Trigger",
+        "OnTriggerEnter": [
+          {
+            "$type": "RPG.GameCore.PauseTimeRewindTarget, RPG.GameCore.Config",
+            "IsClientOnly": true,
+            "IsPause": true,
+            "IsSkill": true,
+            "Target": {
+              "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+              "Alias": "TaskActionTarget"
+            },
+            "TaskEnabled": true
+          }
+        ],
+        "OnTriggerExit": [
+          {
+            "$type": "RPG.GameCore.PauseTimeRewindTarget, RPG.GameCore.Config",
+            "IsClientOnly": true,
+            "IsSkill": true,
+            "Target": {
+              "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+              "Alias": "TaskActionTarget"
+            },
+            "TaskEnabled": true
+          }
+        ],
+        "OnlyCheckFilterOnEnter": true,
+        "Radius": {
+          "fixedValue": {
+            "Value": 9.200000000186265
+          }
+        },
+        "RayStartOffsetY": 1,
+        "SkipFakeAvatar": true,
+        "TargetTypes": [
+          "Prop"
+        ],
+        "TriggerName": "PlayerBoy_30_FieldTrigger_Prop"
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+syntax = "proto3";              
+//Fenni
+option java_package = "emu.lunarcore.proto";
+
+message BattlePassInfoNotify {
+	// up to lv64 => normal
+	// after lv64 => extended
+	enum BpTierType {
+		BP_TIER_TYPE_NONE = 0;
+		BP_TIER_TYPE_FREE = 1;
+		BP_TIER_TYPE_PREMIUM_1 = 2;
+		BP_TIER_TYPE_PREMIUM_2 = 3;
+	}
+	BpTierType bp_tier_type = 15;
+	uint32 level = 4;
+	uint32 exp = 6;
+	uint32 cur_bp_id = 3;//g or 9
+	uint32 cur_week_add_exp_sum = 9;//g or 3
+
+	// the difficult ones
+	uint64 taken_free_reward = 13;
+	uint64 taken_free_extended_reward = 10;
+	uint64 taken_premium_optional_reward = 14;
+	uint64 taken_premium_extended_reward = 12;
+	uint64 taken_premium_reward2 = 11;
+	uint64 taken_premium_reward1 = 88;
+}
+/*	uint32 level = 6;
+	uint64 CKNFMIFFAHI = 12;
+	uint64 ELPGEDMBCNB = 10;
+	uint64 BAAIAFIJFAF = 14;
+	uint32 exp = 11;
+	uint32 NPMCPLGFOHL = 9;
+	uint64 FJIDIKAJMJI = 13;
+	uint64 PFFMENBDHJC = 1;
+	uint64 OLOBAGLBGHG = 8;
+	BpTierType IKOBOEKHOOK = 15;
+	uint64 GMBNOJBOHKK = 5;
+	uint32 OFGGAMHLPMP = 3;
+	uint64 HMBAFEEKNAJ = 7;
+*/

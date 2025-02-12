@@ -1,0 +1,143 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.ShowFuncBtn, RPG.GameCore.Config",
+          "CDDuration": 1,
+          "CustomString": {
+            "Value": "PhotoGraphGOGOGO"
+          },
+          "HideWhenGraphFinish": true,
+          "IsClientOnly": true,
+          "PuzzleFunc": "Identify",
+          "Show": true,
+          "ShowBtnFucHint": true,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "PhotoGraphGOGOGO"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.SwitchPhotoGraphMode, RPG.GameCore.Config",
+          "ExitWhenPreViewDialogFinish": true,
+          "InitFov": -1,
+          "IsClientOnly": true,
+          "PhotoGraphMode": "Identify",
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PhotoGraphAimTarget, RPG.GameCore.Config",
+          "AimTargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvProp, RPG.GameCore.Config",
+            "MultiGroupFetch": [
+              {
+                "GroupID": {},
+                "ID": {}
+              }
+            ]
+          },
+          "IsAim": true,
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PhotoGraphWaitIdentifyFinish, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true,
+          "WaitTargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvProp, RPG.GameCore.Config",
+            "MultiGroupFetch": [
+              {
+                "GroupID": {},
+                "ID": {}
+              }
+            ]
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PhotoGraphAimTarget, RPG.GameCore.Config",
+          "AimTargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvProp, RPG.GameCore.Config",
+            "MultiGroupFetch": [
+              {
+                "GroupID": {},
+                "ID": {}
+              }
+            ]
+          },
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.SwitchPhotoGraphMode, RPG.GameCore.Config",
+          "ExitWhenPreViewDialogFinish": true,
+          "InitFov": -1,
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Mission_800122102_Photo_Took"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Mission_800122102_Photo_Took"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowFuncBtn, RPG.GameCore.Config",
+          "CDDuration": 1,
+          "CustomString": {
+            "Value": "PhotoGraphGOGOGO"
+          },
+          "HideWhenGraphFinish": true,
+          "IsClientOnly": true,
+          "PuzzleFunc": "Identify",
+          "ShowBtnFucHint": true,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Mission_800122102_Photo_Took"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_800122102",
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

@@ -1,0 +1,63 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_103110113"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerPerformance, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "PerformanceID": 103110172,
+          "PerformanceType": "D",
+          "TaskEnabled": true,
+          "ValueSource": {}
+        },
+        {
+          "$type": "RPG.GameCore.PerformanceEndSeq, RPG.GameCore.Config",
+          "Cases": [
+            {
+              "OnSuccess": [
+                {
+                  "$type": "RPG.GameCore.TeleportToRotatableRegion, RPG.GameCore.Config",
+                  "IsClientOnly": true,
+                  "TargetAnchorGroupID": {
+                    "fixedValue": {
+                      "Value": 63
+                    }
+                  },
+                  "TargetAnchorInstanceID": {
+                    "fixedValue": {
+                      "Value": 1
+                    }
+                  },
+                  "TargetRegionIndex": {
+                    "fixedValue": {
+                      "Value": -1
+                    }
+                  },
+                  "TaskEnabled": true
+                }
+              ]
+            }
+          ],
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_103110113",
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

@@ -1,0 +1,61 @@
+{
+  "AttachPoint": "Origin",
+  "ConfigEntityPath": "Config/ConfigEntity/SummonUnit/SummonUnit_Common_TeamField_Entity.json",
+  "Duration": {
+    "fixedValue": {
+      "Value": -1
+    }
+  },
+  "GroupConfigName": "FakeAvatar_FollowField",
+  "OnDestroy": [],
+  "ResidentEffects": [],
+  "ShoesType": "boot",
+  "TickLodTemplateName": "DefaultStaticEntity",
+  "TriggerConfig": {
+    "CustomTriggers": [
+      {
+        "DefaultEnable": true,
+        "LowerBound": -5,
+        "NeedRaycast": true,
+        "OnTriggerEnter": [
+          {
+            "$type": "RPG.GameCore.AddAdventureModifier, RPG.GameCore.Config",
+            "IsClientOnly": true,
+            "ModifierName": "ADV_Modifier_Maze_Huohuo_Fear",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+              "Alias": "TaskActionTarget"
+            },
+            "TaskEnabled": true
+          }
+        ],
+        "OnTriggerExit": [
+          {
+            "$type": "RPG.GameCore.RemoveAdventureModifier, RPG.GameCore.Config",
+            "IsClientOnly": true,
+            "ModifierName": "ADV_Modifier_Maze_Huohuo_Fear",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+              "Alias": "TaskActionTarget"
+            },
+            "TaskEnabled": true
+          }
+        ],
+        "OnlyCheckFilterOnEnter": true,
+        "Radius": {
+          "fixedValue": {
+            "Value": 20
+          }
+        },
+        "RayStartOffsetY": 1,
+        "SkipFakeAvatar": true,
+        "TargetTypes": [
+          "NPCMonster"
+        ],
+        "TriggerName": "HitNpcMonsterTrigger",
+        "UpperBound": 5,
+        "UseVerticalBound": true
+      }
+    ]
+  }
+}

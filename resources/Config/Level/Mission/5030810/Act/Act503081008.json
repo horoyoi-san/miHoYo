@@ -1,0 +1,163 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LevelPerformanceInitialize, RPG.GameCore.Config",
+          "HideMonster": true,
+          "HideMunicipalCrowd": true,
+          "HideMunicipalOther": true,
+          "HideMunicipalPedestrian": true,
+          "IsClientOnly": true,
+          "PerformanceType": "D",
+          "ResetEnvironment": true,
+          "ResetMonster": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayFullScreenTransfer, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDuration": 0.5,
+          "PostDuration": 0.5,
+          "PrevDuration": 0.5,
+          "TaskEnabled": true,
+          "Type": "Black"
+        },
+        {
+          "$type": "RPG.GameCore.StartDialogueEntityInteract, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "LevelGraphPath": "Config/Level/Props/InteractMode/TriggerEvent_TriggerType_08.json",
+          "OverrideTasks": {
+            "OverrideVCamBlendConfig": true,
+            "VCamBlendConfig": {
+              "BlendType": "Cut",
+              "ExportToJson": true,
+              "FOVSmoothDampTime": -1,
+              "FrameBlendDuration": 1,
+              "FrameBlendWeightStart": 1
+            }
+          },
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 204
+                }
+              },
+              "GroupNpcID": {
+                "fixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true,
+          "UseOverrideData": true,
+          "ValueSource": {
+            "SharedValues": [
+              {
+                "$type": "RPG.GameCore.SharedString, RPG.GameCore.Config",
+                "Key": "DialogueEntityInteract_AreaPath",
+                "Value": "Level/Common_Adventure/Dreamland.prefab"
+              },
+              {
+                "$type": "RPG.GameCore.SharedString, RPG.GameCore.Config",
+                "Key": "DialogueEntityInteract_CameraKey",
+                "Value": "Dreamland,Dreamland_Camera"
+              },
+              {
+                "$type": "RPG.GameCore.SharedString, RPG.GameCore.Config",
+                "Key": "DialogueEntityInteract_AreaName",
+                "Value": "Dreamland"
+              },
+              {
+                "$type": "RPG.GameCore.SharedFloat, RPG.GameCore.Config",
+                "Key": "ResetEntityTransform"
+              }
+            ],
+            "Values": [
+              {
+                "$type": "RPG.GameCore.SharedString, RPG.GameCore.Config",
+                "Key": "DialogueEntityInteract_AreaPath",
+                "Value": "Level/Common_Adventure/Dreamland.prefab"
+              },
+              {
+                "$type": "RPG.GameCore.SharedString, RPG.GameCore.Config",
+                "Key": "DialogueEntityInteract_CameraKey",
+                "Value": "Dreamland,Dreamland_Camera"
+              },
+              {
+                "$type": "RPG.GameCore.SharedString, RPG.GameCore.Config",
+                "Key": "DialogueEntityInteract_AreaName",
+                "Value": "Dreamland"
+              },
+              {
+                "$type": "RPG.GameCore.SharedFloat, RPG.GameCore.Config",
+                "Key": "ResetEntityTransform"
+              }
+            ]
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "TalkSentenceID": 503081351
+            },
+            {
+              "TalkSentenceID": 503081352
+            },
+            {
+              "TalkSentenceID": 503081353
+            },
+            {
+              "TalkSentenceID": 503081354
+            },
+            {
+              "TalkSentenceID": 503081355
+            }
+          ],
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayFullScreenTransfer, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDuration": 0.5,
+          "PostDuration": 0.5,
+          "PrevDuration": 0.5,
+          "TaskEnabled": true,
+          "Type": "Black"
+        },
+        {
+          "$type": "RPG.GameCore.EndDialogueEntityInteract, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.EndPerformance, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPerformanceEnd, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishLevelGraph, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ]
+}

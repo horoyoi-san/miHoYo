@@ -1,0 +1,819 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions, RPG.GameCore.Config",
+          "CustomValueMainMissionIDList": [],
+          "IsClientOnly": true,
+          "MainMissionIDList": [],
+          "PerformanceIDDsList": [],
+          "PerformanceIDList": [],
+          "TaskEnabled": true,
+          "TaskIDList": [
+            801520201,
+            801520203,
+            201073401,
+            201073501,
+            201073301,
+            201073201,
+            201073101
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.LevelPerformanceInitialize, RPG.GameCore.Config",
+          "CreateCharacterList": [],
+          "EntityVisiableList": [],
+          "HideMonster": true,
+          "HideMunicipalCrowd": true,
+          "HideMunicipalOther": true,
+          "HideMunicipalPedestrian": true,
+          "IsClientOnly": true,
+          "MarkStreamingItems": [],
+          "PerformanceType": "D",
+          "PropVisiableList": [],
+          "ResetEnvironment": true,
+          "ResetMonster": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.AdvNpcFaceToPlayer, RPG.GameCore.Config",
+          "FinishImmadiate": true,
+          "ForceToStandBy": true,
+          "FromDialog": true,
+          "GroupID": 24,
+          "GroupNpcID": 400001,
+          "IsClientOnly": true,
+          "NpcLookAtPlayer": true,
+          "PlayerLookAtNpc": true,
+          "StopLookAtOnGraphEnd": true,
+          "TaskEnabled": true,
+          "TryFaceToFace": true,
+          "TurnBackOnGraphEnd": true,
+          "WaitFinishMode": "WaitFaceAngle"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_201073006"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_201073006"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.SwitchCase, RPG.GameCore.Config",
+          "DefaultTask": [
+            {
+              "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "KeepDisplay": true,
+              "SimpleTalkList": [
+                {
+                  "ProtectTime": 0.3,
+                  "TalkSentenceID": 801520201,
+                  "TextSpeed": 20
+                }
+              ],
+              "TaskEnabled": true
+            },
+            {
+              "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+              "CustomString": {
+                "Value": "goto_boxingclub"
+              },
+              "TaskEnabled": true
+            }
+          ],
+          "IsClientOnly": true,
+          "TaskEnabled": true,
+          "TaskList": [
+            {
+              "Predicate": {
+                "$type": "RPG.GameCore.ByAnd, RPG.GameCore.Config",
+                "PredicateList": [
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState, RPG.GameCore.Config",
+                    "IsClientOnly": true,
+                    "SubMissionID": 801520201,
+                    "SubMissionState": "Finish",
+                    "TaskEnabled": true
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState, RPG.GameCore.Config",
+                    "Inverse": true,
+                    "IsClientOnly": true,
+                    "SubMissionID": 801520203,
+                    "SubMissionState": "Finish",
+                    "TaskEnabled": true
+                  }
+                ],
+                "TaskEnabled": true
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+                  "IsClientOnly": true,
+                  "KeepDisplay": true,
+                  "SimpleTalkList": [
+                    {
+                      "ProtectTime": 0.3,
+                      "TalkSentenceID": 801520201,
+                      "TextSpeed": 20
+                    }
+                  ],
+                  "TaskEnabled": true
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+                  "CustomString": {
+                    "Value": "goto_boxingclub"
+                  },
+                  "TaskEnabled": true
+                }
+              ],
+              "TaskEnabled": true
+            },
+            {
+              "Predicate": {
+                "$type": "RPG.GameCore.ByAnd, RPG.GameCore.Config",
+                "PredicateList": [
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState, RPG.GameCore.Config",
+                    "IsClientOnly": true,
+                    "SubMissionID": 201073401,
+                    "SubMissionState": "Finish",
+                    "TaskEnabled": true
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState, RPG.GameCore.Config",
+                    "Inverse": true,
+                    "IsClientOnly": true,
+                    "SubMissionID": 201073501,
+                    "SubMissionState": "Finish",
+                    "TaskEnabled": true
+                  }
+                ],
+                "TaskEnabled": true
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlaySimpleTalk, RPG.GameCore.Config",
+                  "IsClientOnly": true,
+                  "KeepDisplay": true,
+                  "SimpleTalkList": [
+                    {
+                      "ProtectTime": 0.3,
+                      "TalkSentenceID": 201073022,
+                      "TextSpeed": 20
+                    }
+                  ],
+                  "TaskEnabled": true
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSimpleTalkFinish, RPG.GameCore.Config",
+                  "IsClientOnly": true,
+                  "TaskEnabled": true
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+                  "CustomString": {
+                    "Value": "goto_boxingclub"
+                  },
+                  "TaskEnabled": true
+                }
+              ],
+              "TaskEnabled": true
+            },
+            {
+              "Predicate": {
+                "$type": "RPG.GameCore.ByAnd, RPG.GameCore.Config",
+                "PredicateList": [
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState, RPG.GameCore.Config",
+                    "IsClientOnly": true,
+                    "SubMissionID": 201073301,
+                    "SubMissionState": "Finish",
+                    "TaskEnabled": true
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState, RPG.GameCore.Config",
+                    "Inverse": true,
+                    "IsClientOnly": true,
+                    "SubMissionID": 201073501,
+                    "SubMissionState": "Finish",
+                    "TaskEnabled": true
+                  }
+                ],
+                "TaskEnabled": true
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlaySimpleTalk, RPG.GameCore.Config",
+                  "IsClientOnly": true,
+                  "KeepDisplay": true,
+                  "SimpleTalkList": [
+                    {
+                      "ProtectTime": 0.3,
+                      "TalkSentenceID": 201073021,
+                      "TextSpeed": 20
+                    },
+                    {
+                      "ProtectTime": 0.8,
+                      "TalkSentenceID": 201073030,
+                      "TextSpeed": 20
+                    }
+                  ],
+                  "TaskEnabled": true
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSimpleTalkFinish, RPG.GameCore.Config",
+                  "IsClientOnly": true,
+                  "TaskEnabled": true
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+                  "CustomString": {
+                    "Value": "goto_boxingclub"
+                  },
+                  "TaskEnabled": true
+                }
+              ],
+              "TaskEnabled": true
+            },
+            {
+              "Predicate": {
+                "$type": "RPG.GameCore.ByAnd, RPG.GameCore.Config",
+                "PredicateList": [
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState, RPG.GameCore.Config",
+                    "IsClientOnly": true,
+                    "SubMissionID": 201073201,
+                    "SubMissionState": "Finish",
+                    "TaskEnabled": true
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState, RPG.GameCore.Config",
+                    "Inverse": true,
+                    "IsClientOnly": true,
+                    "SubMissionID": 201073501,
+                    "SubMissionState": "Finish",
+                    "TaskEnabled": true
+                  }
+                ],
+                "TaskEnabled": true
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlaySimpleTalk, RPG.GameCore.Config",
+                  "IsClientOnly": true,
+                  "KeepDisplay": true,
+                  "SimpleTalkList": [
+                    {
+                      "ProtectTime": 0.3,
+                      "TalkSentenceID": 201073020,
+                      "TextSpeed": 20
+                    },
+                    {
+                      "ProtectTime": 0.8,
+                      "TalkSentenceID": 201073007,
+                      "TextSpeed": 20
+                    }
+                  ],
+                  "TaskEnabled": true
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSimpleTalkFinish, RPG.GameCore.Config",
+                  "IsClientOnly": true,
+                  "TaskEnabled": true
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+                  "CustomString": {
+                    "Value": "goto_boxingclub"
+                  },
+                  "TaskEnabled": true
+                }
+              ],
+              "TaskEnabled": true
+            },
+            {
+              "Predicate": {
+                "$type": "RPG.GameCore.ByAnd, RPG.GameCore.Config",
+                "PredicateList": [
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState, RPG.GameCore.Config",
+                    "IsClientOnly": true,
+                    "SubMissionID": 201073101,
+                    "SubMissionState": "Finish",
+                    "TaskEnabled": true
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState, RPG.GameCore.Config",
+                    "Inverse": true,
+                    "IsClientOnly": true,
+                    "SubMissionID": 201073501,
+                    "SubMissionState": "Finish",
+                    "TaskEnabled": true
+                  }
+                ],
+                "TaskEnabled": true
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlaySimpleTalk, RPG.GameCore.Config",
+                  "IsClientOnly": true,
+                  "KeepDisplay": true,
+                  "SimpleTalkList": [
+                    {
+                      "ProtectTime": 0.3,
+                      "TalkSentenceID": 201073019,
+                      "TextSpeed": 20
+                    },
+                    {
+                      "ProtectTime": 0.8,
+                      "TalkSentenceID": 201073007,
+                      "TextSpeed": 20
+                    }
+                  ],
+                  "TaskEnabled": true
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSimpleTalkFinish, RPG.GameCore.Config",
+                  "IsClientOnly": true,
+                  "TaskEnabled": true
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+                  "CustomString": {
+                    "Value": "goto_boxingclub"
+                  },
+                  "TaskEnabled": true
+                }
+              ],
+              "TaskEnabled": true
+            },
+            {
+              "Predicate": {
+                "$type": "RPG.GameCore.ByAnd, RPG.GameCore.Config",
+                "PredicateList": [
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState, RPG.GameCore.Config",
+                    "IsClientOnly": true,
+                    "SubMissionID": 201073101,
+                    "SubMissionState": "Started",
+                    "TaskEnabled": true
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState, RPG.GameCore.Config",
+                    "Inverse": true,
+                    "IsClientOnly": true,
+                    "SubMissionID": 201073501,
+                    "SubMissionState": "Finish",
+                    "TaskEnabled": true
+                  }
+                ],
+                "TaskEnabled": true
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlaySimpleTalk, RPG.GameCore.Config",
+                  "IsClientOnly": true,
+                  "KeepDisplay": true,
+                  "SimpleTalkList": [
+                    {
+                      "ProtectTime": 0.3,
+                      "TalkSentenceID": 201073006,
+                      "TextSpeed": 20
+                    },
+                    {
+                      "ProtectTime": 0.8,
+                      "TalkSentenceID": 201073007,
+                      "TextSpeed": 20
+                    }
+                  ],
+                  "TaskEnabled": true
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSimpleTalkFinish, RPG.GameCore.Config",
+                  "IsClientOnly": true,
+                  "TaskEnabled": true
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+                  "CustomString": {
+                    "Value": "goto_boxingclub"
+                  },
+                  "TaskEnabled": true
+                }
+              ],
+              "TaskEnabled": true
+            }
+          ],
+          "WithBreak": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "goto_boxingclub"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayOptionTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "OptionList": [
+            {
+              "OptionIconType": "GeneralActivityIcon",
+              "TalkSentenceID": 801520222,
+              "TriggerCustomString": "TalkSentence_801520223"
+            },
+            {
+              "OptionIconType": "ChatIcon",
+              "TalkSentenceID": 801520202,
+              "TriggerCustomString": "TalkSentence_801520203"
+            },
+            {
+              "OptionIconType": "ChatOutIcon",
+              "TalkSentenceID": 801520224,
+              "TriggerCustomString": "TalkSentence_801520225"
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_801520203"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 801520203,
+              "TextSpeed": 20
+            }
+          ],
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Wait_Option_801520201_12"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Wait_Option_801520201_12"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList, RPG.GameCore.Config",
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.PlayOptionTalk, RPG.GameCore.Config",
+              "HideSelected": true,
+              "IsClientOnly": true,
+              "OptionList": [
+                {
+                  "OptionIconType": "ChatLoopIcon",
+                  "TalkSentenceID": 801520204,
+                  "TriggerCustomString": "TalkSentence_801520205"
+                },
+                {
+                  "OptionIconType": "ChatBackIcon",
+                  "TalkSentenceID": 801520221,
+                  "TriggerCustomString": "goto_boxingclub"
+                }
+              ],
+              "TaskEnabled": true
+            }
+          ],
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareSubMissionState, RPG.GameCore.Config",
+            "IsClientOnly": true,
+            "SubMissionID": 801520201,
+            "SubMissionState": "Finish",
+            "TaskEnabled": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.PlayOptionTalk, RPG.GameCore.Config",
+              "HideSelected": true,
+              "IsClientOnly": true,
+              "OptionList": [
+                {
+                  "OptionIconType": "ChatLoopIcon",
+                  "TalkSentenceID": 801520204,
+                  "TriggerCustomString": "TalkSentence_801520205"
+                },
+                {
+                  "OptionIconType": "ChatLoopIcon",
+                  "TalkSentenceID": 801520211,
+                  "TriggerCustomString": "TalkSentence_801520212"
+                },
+                {
+                  "OptionIconType": "ChatBackIcon",
+                  "TalkSentenceID": 801520221,
+                  "TriggerCustomString": "goto_boxingclub"
+                }
+              ],
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_801520205"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 801520205,
+              "TextSpeed": 20
+            },
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 801520206,
+              "TextSpeed": 20
+            },
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 801520207,
+              "TextSpeed": 20
+            },
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 801520208,
+              "TextSpeed": 20
+            },
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 801520209,
+              "TextSpeed": 20
+            },
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 801520210,
+              "TextSpeed": 20
+            }
+          ],
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Wait_Option_801520201_12"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_801520212"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 801520212,
+              "TextSpeed": 20
+            },
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 801520213,
+              "TextSpeed": 20
+            }
+          ],
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayOptionTalk, RPG.GameCore.Config",
+          "HideSelected": true,
+          "IsClientOnly": true,
+          "OptionList": [
+            {
+              "OptionIconType": "ChatContinueIcon",
+              "TalkSentenceID": 801520214,
+              "TriggerCustomString": "TalkSentence_801520216"
+            },
+            {
+              "OptionIconType": "ChatContinueIcon",
+              "TalkSentenceID": 801520215,
+              "TriggerCustomString": "TalkSentence_801520216"
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_801520216"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 801520216,
+              "TextSpeed": 20
+            },
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 801520217,
+              "TextSpeed": 20
+            },
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 801520218,
+              "TextSpeed": 20
+            },
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 801520219,
+              "TextSpeed": 20
+            },
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 801520220,
+              "TextSpeed": 20
+            }
+          ],
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Wait_Option_801520201_12"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_801520223"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 801520223,
+              "TextSpeed": 20
+            }
+          ],
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomStringOnDialogEnd, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "OpenBoxingClubPage"
+          },
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "ALL_TALK_END"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "TalkSentence_801520225"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 0.3,
+              "TalkSentenceID": 801520225,
+              "TextSpeed": 20
+            }
+          ],
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "ALL_TALK_END"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "ALL_TALK_END"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.EndPerformance, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPerformanceEnd, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishLevelGraph, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ]
+}

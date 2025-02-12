@@ -1,0 +1,43 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.SetFloorCustomFloat, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Name": {
+            "Value": "FCV_Mute_SlotMachine"
+          },
+          "TaskEnabled": true,
+          "Value": {}
+        }
+      ]
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_434010509"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.ConsumeMissionItem, RPG.GameCore.Config",
+          "IsAutoConsume": true,
+          "IsClientOnly": true,
+          "SimpleTalk": {
+            "ProtectTime": 0.8,
+            "TextSpeed": 20
+          },
+          "SubMissionID": 434010509,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

@@ -1,0 +1,78 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_800320101"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_800320101",
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "IsSingle": true,
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.PlayMunicipalChat, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "MunicipalChatName": "MunicipalChatConfig_F10202001_0001",
+              "NewMunicipalChatConfigPath": "Config/Level/MunicipalChatConfig/F10202001/MunicipalChatConfig_F10202001_0001.json",
+              "NewMunicipalChatEntityInfos": {
+                "Value": [
+                  {
+                    "$type": "RPG.GameCore.MunicipalChatEntityInfo, RPG.GameCore.Config",
+                    "GroupInstanceID": 400001,
+                    "UniqueName": "1"
+                  }
+                ]
+              },
+              "TaskEnabled": true
+            }
+          ],
+          "OnTriggerExit": [
+            {
+              "$type": "RPG.GameCore.StopMunicipalChat, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "MunicipalChatName": "MunicipalChatConfig_F10202001_0001",
+              "TaskEnabled": true
+            }
+          ],
+          "SkipFakeAvatar": true,
+          "TargetEntityType": "LocalPlayer",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 105
+                }
+              },
+              "ID": {
+                "fixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          },
+          "TargetTypes": [],
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

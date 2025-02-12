@@ -1,0 +1,66 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_800210603"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_800210603",
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "PhotoGraphEnble"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.SwitchPhotoGraphMode, RPG.GameCore.Config",
+          "ExitWhenPreViewDialogFinish": true,
+          "IdentifyDisplayType": "March7thGuessTheSilhouette",
+          "IdentifyRadiusOverride": {
+            "fixedValue": {
+              "Value": 15
+            }
+          },
+          "InitFov": -1,
+          "IsClientOnly": true,
+          "PhotoGraphMode": "Identify",
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.ShowFuncBtn, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "PhotoGraphEnble"
+          },
+          "HideWhenGraphFinish": true,
+          "IsClientOnly": true,
+          "PuzzleFunc": "Match7thGuessTheSilhouette",
+          "Show": true,
+          "ShowBtnFucHint": true,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

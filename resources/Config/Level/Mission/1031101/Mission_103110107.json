@@ -1,0 +1,251 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList, RPG.GameCore.Config",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareFloorCustomFloat, RPG.GameCore.Config",
+            "CompareType": "Equal",
+            "CompareValue": {
+              "fixedValue": {
+                "Value": 1
+              }
+            },
+            "IsClientOnly": true,
+            "Name": {
+              "Value": "FCV_RavenPuzzle_State"
+            },
+            "TaskEnabled": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+              "CustomString": {
+                "Value": "Talk_103110106"
+              },
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions, RPG.GameCore.Config",
+          "CustomValueMainMissionIDList": [
+            1031101
+          ],
+          "IsClientOnly": true,
+          "MainMissionIDList": [],
+          "PerformanceIDDsList": [],
+          "PerformanceIDList": [],
+          "TaskEnabled": true,
+          "TaskIDList": [
+            103110106
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "RavenPuzzle_OnOperation"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList, RPG.GameCore.Config",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareMissionCustomValue, RPG.GameCore.Config",
+            "EquationType": "NotEqual",
+            "IsClientOnly": true,
+            "MainMissionID": 1031101,
+            "MissionCustomValue": {
+              "ValidValueParamList": [
+                0,
+                6
+              ],
+              "isLocal": true,
+              "isRange": true
+            },
+            "TargetValue": 10,
+            "TaskEnabled": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList, RPG.GameCore.Config",
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.CalculateMissionCustomValue, RPG.GameCore.Config",
+                  "IsClientOnly": true,
+                  "TargetMissionCustomValue": {
+                    "ValidValueParamList": [
+                      0,
+                      6
+                    ],
+                    "isLocal": true,
+                    "isRange": true
+                  },
+                  "TargetSubmissionID": 103110106,
+                  "TaskEnabled": true,
+                  "ValueA": {
+                    "MainMissionID": 1031101,
+                    "MissionCustomValue": {
+                      "ValidValueParamList": [
+                        0,
+                        6
+                      ],
+                      "isLocal": true,
+                      "isRange": true
+                    },
+                    "Type": "CustomValue"
+                  },
+                  "ValueB": {
+                    "DirectValue": 1
+                  }
+                }
+              ],
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareSubMissionState, RPG.GameCore.Config",
+                "IsClientOnly": true,
+                "SubMissionID": 103110106,
+                "SubMissionState": "Started",
+                "TaskEnabled": true
+              },
+              "SuccessTaskList": [],
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions, RPG.GameCore.Config",
+          "CustomValueMainMissionIDList": [
+            1031101
+          ],
+          "IsClientOnly": true,
+          "MainMissionIDList": [],
+          "PerformanceIDDsList": [],
+          "PerformanceIDList": [],
+          "TaskEnabled": true,
+          "TaskIDList": [
+            103110106
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_103110106"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList, RPG.GameCore.Config",
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerPerformance, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "PerformanceID": 103110109,
+              "PerformanceType": "D",
+              "TaskEnabled": true,
+              "ValueSource": {}
+            },
+            {
+              "$type": "RPG.GameCore.PerformanceEndSeq, RPG.GameCore.Config",
+              "Cases": [
+                {
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SwitchCharacterAnchorV2, RPG.GameCore.Config",
+                      "IsClientOnly": true,
+                      "SwitchCharacterAnchorConfig": {
+                        "AnchorName": {
+                          "Value": "Anchor1"
+                        },
+                        "AreaName": {
+                          "Value": "LevelArea_P20322_F20322001_G59"
+                        },
+                        "CharacterUniqueName": "LocalPlayer",
+                        "IsClientOnly": true,
+                        "IsLocalPlayer": true,
+                        "ResetAnimation": true,
+                        "ResetCamera": true,
+                        "TaskEnabled": true
+                      },
+                      "TaskEnabled": true
+                    }
+                  ]
+                }
+              ],
+              "IsClientOnly": true,
+              "TaskEnabled": true
+            }
+          ],
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareSubMissionState, RPG.GameCore.Config",
+            "IsClientOnly": true,
+            "SubMissionID": 103110106,
+            "SubMissionState": "Started",
+            "TaskEnabled": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerPerformance, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "PerformanceID": 103110106,
+              "PerformanceType": "D",
+              "TaskEnabled": true,
+              "ValueSource": {}
+            },
+            {
+              "$type": "RPG.GameCore.PerformanceEndSeq, RPG.GameCore.Config",
+              "Cases": [
+                {
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SwitchCharacterAnchorV2, RPG.GameCore.Config",
+                      "IsClientOnly": true,
+                      "SwitchCharacterAnchorConfig": {
+                        "AnchorName": {
+                          "Value": "Anchor1"
+                        },
+                        "AreaName": {
+                          "Value": "LevelArea_P20322_F20322001_G59"
+                        },
+                        "CharacterUniqueName": "LocalPlayer",
+                        "IsClientOnly": true,
+                        "IsLocalPlayer": true,
+                        "ResetAnimation": true,
+                        "ResetCamera": true,
+                        "TaskEnabled": true
+                      },
+                      "TaskEnabled": true
+                    }
+                  ]
+                }
+              ],
+              "IsClientOnly": true,
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_103110107",
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

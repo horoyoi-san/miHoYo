@@ -1,0 +1,130 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CaptureNPCToCharacter, RPG.GameCore.Config",
+          "CharacterUniqueName": {
+            "Value": "LittleBird"
+          },
+          "GroupID": {
+            "fixedValue": {
+              "Value": 93
+            }
+          },
+          "GroupNpcID": {
+            "fixedValue": {
+              "Value": 400006
+            }
+          },
+          "IsClientOnly": true,
+          "ReleaseIfPerformanceEnd": true,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_602010101"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_602010101",
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "OpenDrone60201"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.SetMissionWayPoint, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "MapWaypointRange": 40,
+          "MissionWayPointType": "Anchor",
+          "OverideMapWaypointRange": true,
+          "OverideMissionWayPointType": true,
+          "OverideWayPointEntityID": true,
+          "OverideWayPointFloorID": true,
+          "OverideWayPointGroupID": true,
+          "OverideWayPointShowRangeMin": true,
+          "SubMissionID": 602010102,
+          "TaskEnabled": true,
+          "WayPointEntityID": 1,
+          "WayPointFloorID": 20212001,
+          "WayPointGroupID": 134,
+          "WayPointShowRangeMin": -1
+        },
+        {
+          "$type": "RPG.GameCore.ShowWaypointByProp, RPG.GameCore.Config",
+          "GroupID": {
+            "fixedValue": {
+              "Value": 134
+            }
+          },
+          "IconPath": "SpriteOutput/MapPics/NaviIcons/IconMapPlay6.png",
+          "InstanceID": {
+            "fixedValue": {
+              "Value": 300001
+            }
+          },
+          "IsClientOnly": true,
+          "MaxRange": 15,
+          "OnNameBoard": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowWaypointByProp, RPG.GameCore.Config",
+          "GroupID": {
+            "fixedValue": {
+              "Value": 134
+            }
+          },
+          "IconPath": "SpriteOutput/MapPics/NaviIcons/IconMapPlay6.png",
+          "InstanceID": {
+            "fixedValue": {
+              "Value": 300002
+            }
+          },
+          "IsClientOnly": true,
+          "MaxRange": 15,
+          "OnNameBoard": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowWaypointByProp, RPG.GameCore.Config",
+          "GroupID": {
+            "fixedValue": {
+              "Value": 134
+            }
+          },
+          "IconPath": "SpriteOutput/MapPics/NaviIcons/IconMapPlay6.png",
+          "InstanceID": {
+            "fixedValue": {
+              "Value": 300004
+            }
+          },
+          "IsClientOnly": true,
+          "MaxRange": 15,
+          "OnNameBoard": true,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

@@ -1,0 +1,101 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "EnterArea_800221403"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayMissionTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "SimpleTalkList": [
+            {
+              "ProtectTime": 2,
+              "TalkSentenceID": 102050408,
+              "TextSpeed": 20
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "EnterArea_800221403"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.BlockInputController, RPG.GameCore.Config",
+          "ActionNameList": [],
+          "Enable": true,
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.AdventureCameraLookAtSimple, RPG.GameCore.Config",
+          "EnableOverrideLookAtOffset": true,
+          "FollowLookAtTarget": true,
+          "IsClientOnly": true,
+          "LockCameraInput": true,
+          "LookAtDuration": 3,
+          "LookAtRecoverCurvePath": "Camera/BlendCurve/BlendCut_Motion.asset",
+          "LookAtRecoverDuration": 1,
+          "LookAtTarget": {
+            "$type": "RPG.GameCore.TargetFetchAdvProp, RPG.GameCore.Config",
+            "MultiGroupFetch": [
+              {
+                "GroupID": {
+                  "fixedValue": {
+                    "Value": 13
+                  }
+                },
+                "ID": {
+                  "fixedValue": {
+                    "Value": 300006
+                  }
+                }
+              }
+            ]
+          },
+          "LookAtTransitionCurvePath": "Camera/BlendCurve/BlendCut_Motion.asset",
+          "LookAtTransitionDuration": 1,
+          "OverrideLookAtOffset": {
+            "magnitude": 8.485281,
+            "normalized": {
+              "magnitude": 1,
+              "sqrMagnitude": 1.00000012,
+              "y": 0.7071068,
+              "z": 0.7071068
+            },
+            "sqrMagnitude": 72,
+            "y": 6,
+            "z": 6
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.BlockInputController, RPG.GameCore.Config",
+          "ActionNameList": [],
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_800221406",
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

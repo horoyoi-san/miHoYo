@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.lunarcore.proto";
+
+import "ChallengeStoryBuffList.proto";
+import "ChallengeBossBuffList.proto";
+
+message ChallengeCurBuffInfo {
+	oneof challenge_info_case {
+		ChallengeStoryBuffList cur_story_buffs = 15;
+		ChallengeBossBuffList cur_boss_buffs = 13;
+	}
+}
+

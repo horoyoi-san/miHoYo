@@ -1,0 +1,86 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LevelPerformanceInitialize, RPG.GameCore.Config",
+          "HideMonster": true,
+          "HideMunicipalCrowd": true,
+          "HideMunicipalOther": true,
+          "HideMunicipalPedestrian": true,
+          "IsClientOnly": true,
+          "PerformanceType": "D",
+          "ResetEnvironment": true,
+          "ResetMonster": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "KeepDisplay": true,
+          "SimpleTalkList": [
+            {
+              "TalkSentenceID": 200086601
+            },
+            {
+              "TalkSentenceID": 200086602
+            },
+            {
+              "TalkSentenceID": 200086603
+            },
+            {
+              "TalkSentenceID": 200086604
+            },
+            {
+              "TalkSentenceID": 200086605
+            }
+          ],
+          "TargetBehaviors": [
+            {
+              "UniqueName": "mar7th",
+              "UseMouthTalk": true
+            },
+            {
+              "UniqueName": "mar7th",
+              "UseMouthTalk": true
+            },
+            {
+              "UniqueName": "mar7th",
+              "UseMouthTalk": true
+            },
+            {
+              "UniqueName": "mar7th",
+              "UseMouthTalk": true
+            },
+            {
+              "UniqueName": "player",
+              "UseMouthTalk": true
+            }
+          ],
+          "TaskEnabled": true,
+          "UseTargetBehavior": true
+        },
+        {
+          "$type": "RPG.GameCore.EndPerformance, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPerformanceEnd, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishLevelGraph, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ]
+}

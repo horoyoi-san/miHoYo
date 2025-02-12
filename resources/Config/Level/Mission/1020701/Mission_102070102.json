@@ -1,0 +1,147 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PerformanceTransition, RPG.GameCore.Config",
+          "ActiveVirtualCamera": {
+            "CenterPosX": -1,
+            "CenterPosY": -1,
+            "IsActive": true,
+            "IsClientOnly": true,
+            "VCameraDitherMaxDistance": 1
+          },
+          "CaptureNpcList": [],
+          "CreateNpcList": [],
+          "DestroyNpcList": [],
+          "DisactiveVCamOnGraphEnd": true,
+          "IsClientOnly": true,
+          "SwitchCharacterAnchor": {
+            "IsClientOnly": true,
+            "ResetAnimation": true,
+            "ResetCamera": true
+          },
+          "SwitchKeepTime": 1,
+          "SwitchOutTime": 0.5,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger, RPG.GameCore.Config",
+          "DestroyAfterTriggered": true,
+          "IsClientOnly": true,
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.AdventureCameraLookAt, RPG.GameCore.Config",
+              "AxisOffset": {
+                "magnitude": 24.1660919,
+                "normalized": {
+                  "magnitude": 1,
+                  "sqrMagnitude": 1,
+                  "x": -0.9103665,
+                  "y": -0.413802952
+                },
+                "sqrMagnitude": 584,
+                "x": -22,
+                "y": -10
+              },
+              "ExtraFreelook3rdConfig": {
+                "BaseChangeParam": {
+                  "CenterPos": {
+                    "magnitude": 0.707106769,
+                    "normalized": {
+                      "magnitude": 0.99999994,
+                      "normalized": {
+                        "magnitude": 1,
+                        "sqrMagnitude": 1.00000012,
+                        "x": 0.7071068,
+                        "y": 0.7071068
+                      },
+                      "sqrMagnitude": 0.99999994,
+                      "x": 0.707106769,
+                      "y": 0.707106769
+                    },
+                    "sqrMagnitude": 0.5,
+                    "x": 0.5,
+                    "y": 0.5
+                  },
+                  "ChangeCurvePath": "Camera/BlendCurve/Blend_N1CameraTest.asset",
+                  "ExportToJson": true,
+                  "RecoveryCurvePath": "Camera/BlendCurve/Blend_N1CameraTest.asset",
+                  "RecoveryTime": 1,
+                  "Time": 1,
+                  "ZoomRatio": 1.2
+                },
+                "ExportToJson": true
+              },
+              "FollowLookAtTarget": true,
+              "IsClientOnly": true,
+              "LockCameraInput": true,
+              "LookAtDuration": 1,
+              "LookAtTargetAnchorName": {
+                "Value": "LookatPoint_1"
+              },
+              "LookAtTargetAreaName": {
+                "Value": "1020701_LookatArea"
+              },
+              "LookAtTransitionCurvePath": "Camera/BlendCurve/Blend_N1CameraTest.asset",
+              "LookAtTransitionDuration": 2,
+              "MaxAngle": 60,
+              "PlayerTurnTo": true,
+              "TaskEnabled": true
+            },
+            {
+              "$type": "RPG.GameCore.PlayMissionTalk, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "SimpleTalkList": [
+                {
+                  "ProtectTime": 2,
+                  "TalkSentenceID": 102021102,
+                  "TextSpeed": 20
+                },
+                {
+                  "ProtectTime": 2,
+                  "TalkSentenceID": 102021103,
+                  "TextSpeed": 20
+                }
+              ],
+              "TaskEnabled": true
+            },
+            {
+              "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "Key": "Mission_102070102",
+              "TaskEnabled": true
+            }
+          ],
+          "SkipFakeAvatar": true,
+          "TargetGroupID": {},
+          "TargetID": {},
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 4
+                }
+              },
+              "ID": {
+                "fixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          },
+          "TargetTypes": [],
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

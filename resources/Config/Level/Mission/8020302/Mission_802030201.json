@@ -1,0 +1,63 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "OpenTVChallenge2"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.StartPropInteractMode, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Mode": "UseInteractiveProp",
+          "OverrideData01": {
+            "AnchorName": "UseInteractActivityTelevison_Camera",
+            "AreaName": "UseInteractActivityTelevison",
+            "AreasPath": "Level/Common_Adventure/UseInteractActivityTelevison.prefab",
+            "IsClientOnly": true,
+            "TaskEnabled": true
+          },
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 418
+                }
+              },
+              "ID": {
+                "fixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          },
+          "TaskEnabled": true,
+          "UseOverrideData": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowUI, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Name": "Ui.ActivityTelevision.ActivityTelevisionEnterPage",
+          "Param": {
+            "Value": "2"
+          },
+          "TaskEnabled": true,
+          "WaitForExit": true
+        },
+        {
+          "$type": "RPG.GameCore.EndPropInteract, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

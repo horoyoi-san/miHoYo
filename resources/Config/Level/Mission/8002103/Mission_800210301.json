@@ -1,0 +1,102 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPhotoGraphResult, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "IsLoop": true,
+          "OnSuccess": [
+            {
+              "$type": "RPG.GameCore.TriggerPerformance, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "PerformanceID": 800210301,
+              "PerformanceType": "D",
+              "TaskEnabled": true,
+              "ValueSource": {}
+            },
+            {
+              "$type": "RPG.GameCore.HideEntity, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "IsHide": true,
+              "Target": {
+                "$type": "RPG.GameCore.TargetConcat, RPG.GameCore.Config",
+                "Targets": [
+                  {
+                    "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+                    "FetchType": "SingleNpcByNpcID",
+                    "SingleNpcID": {
+                      "GroupID": {
+                        "fixedValue": {
+                          "Value": 234
+                        }
+                      },
+                      "GroupNpcID": {
+                        "fixedValue": {
+                          "Value": 400002
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+                    "FetchType": "SingleNpcByNpcID",
+                    "SingleNpcID": {
+                      "GroupID": {
+                        "fixedValue": {
+                          "Value": 234
+                        }
+                      },
+                      "GroupNpcID": {
+                        "fixedValue": {
+                          "Value": 400003
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "$type": "RPG.GameCore.TargetFetchAdvNpcEx, RPG.GameCore.Config",
+                    "FetchType": "SingleNpcByNpcID",
+                    "SingleNpcID": {
+                      "GroupID": {
+                        "fixedValue": {
+                          "Value": 234
+                        }
+                      },
+                      "GroupNpcID": {
+                        "fixedValue": {
+                          "Value": 400001
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "TaskEnabled": true
+            },
+            {
+              "$type": "RPG.GameCore.GuessTheSilhouetteResult, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "IsExecuting": true,
+              "SilhouetteID": 7,
+              "TaskEnabled": true
+            },
+            {
+              "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "Key": "Mission_800210301",
+              "MainMissionID": 8002103,
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true,
+          "WaitPhotoResult": [
+            "Target_800210301"
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

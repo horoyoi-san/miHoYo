@@ -1,0 +1,18 @@
+syntax = "proto3";              
+//Fenni
+
+option java_package = "emu.lunarcore.proto";
+
+import "RogueCommonBuffSelectResult.proto";
+import "RogueBuffRollInfo.proto";
+import "RogueMiracleSelectResult.proto";
+import "RogueBonusSelectResult.proto";
+
+message HandleRogueCommonPendingActionCsReq {
+    oneof pending_action {
+        RogueCommonBuffSelectResult buff_select_result = 1158;
+        RogueBuffRollInfo roll_buff = 868;                          // could be 1134
+        RogueMiracleSelectResult miracle_select_result = 144;      // TODO: check
+        RogueBonusSelectResult bonus_select_result = 714;          // check as well
+    }
+}

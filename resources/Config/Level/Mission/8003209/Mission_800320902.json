@@ -1,0 +1,83 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_800320901"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_800320902",
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "IsSingle": true,
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.PlayMunicipalChat, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "MunicipalChatName": "MunicipalChatConfig_F10202004_0023",
+              "NewMunicipalChatConfigPath": "Config/Level/MunicipalChatConfig/F10202004/MunicipalChatConfig_F10202004_0023.json",
+              "NewMunicipalChatEntityInfos": {
+                "Value": [
+                  {
+                    "$type": "RPG.GameCore.MunicipalChatEntityInfo, RPG.GameCore.Config",
+                    "GroupInstanceID": 400002,
+                    "UniqueName": "1"
+                  },
+                  {
+                    "$type": "RPG.GameCore.MunicipalChatEntityInfo, RPG.GameCore.Config",
+                    "GroupInstanceID": 400001,
+                    "UniqueName": "2"
+                  }
+                ]
+              },
+              "TaskEnabled": true
+            }
+          ],
+          "OnTriggerExit": [
+            {
+              "$type": "RPG.GameCore.StopMunicipalChat, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "MunicipalChatName": "MunicipalChatConfig_F10202004_0023",
+              "TaskEnabled": true
+            }
+          ],
+          "SkipFakeAvatar": true,
+          "TargetEntityType": "LocalPlayer",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 63
+                }
+              },
+              "ID": {
+                "fixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          },
+          "TargetTypes": [],
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

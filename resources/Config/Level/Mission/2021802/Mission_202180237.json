@@ -1,0 +1,91 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_202180237"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_202180237",
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList, RPG.GameCore.Config",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByAny, RPG.GameCore.Config",
+            "PredicateList": [
+              {
+                "$type": "RPG.GameCore.ByComparePropState, RPG.GameCore.Config",
+                "IsClientOnly": true,
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+                  "FetchType": "SinglePropByPropID",
+                  "MultiPropID": [],
+                  "SinglePropID": {
+                    "GroupID": {
+                      "fixedValue": {
+                        "Value": 24
+                      }
+                    },
+                    "ID": {
+                      "fixedValue": {
+                        "Value": 300001
+                      }
+                    }
+                  }
+                },
+                "TaskEnabled": true
+              },
+              {
+                "$type": "RPG.GameCore.ByComparePropState, RPG.GameCore.Config",
+                "IsClientOnly": true,
+                "State": "Open",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+                  "FetchType": "SinglePropByPropID",
+                  "MultiPropID": [],
+                  "SinglePropID": {
+                    "GroupID": {
+                      "fixedValue": {
+                        "Value": 24
+                      }
+                    },
+                    "ID": {
+                      "fixedValue": {
+                        "Value": 300001
+                      }
+                    }
+                  }
+                },
+                "TaskEnabled": true
+              }
+            ],
+            "TaskEnabled": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "Key": "Mission_202180237",
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

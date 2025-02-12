@@ -1,0 +1,52 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.TriggerCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Create_119_300001"
+          },
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPhotoGraphResult, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "OnSuccess": [
+            {
+              "$type": "RPG.GameCore.GuessTheSilhouetteResult, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "IsExecuting": true,
+              "SilhouetteID": 4,
+              "TaskEnabled": true
+            },
+            {
+              "$type": "RPG.GameCore.TriggerPerformance, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "PerformanceID": 800210202,
+              "PerformanceType": "E",
+              "TaskEnabled": true,
+              "ValueSource": {}
+            },
+            {
+              "$type": "RPG.GameCore.SaveMessage, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "MessageSectionID": 1214301,
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true,
+          "WaitPhotoResult": [
+            "Target_800210202"
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

@@ -1,0 +1,124 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChange, RPG.GameCore.Config",
+          "Condition": {
+            "$type": "RPG.GameCore.ByCompareFloorCustomString, RPG.GameCore.Config",
+            "CompareType": "Equal",
+            "CompareValue": {
+              "Value": "1"
+            },
+            "IsClientOnly": true,
+            "Name": {
+              "Value": "PlanetInteractiveIndex"
+            },
+            "TaskEnabled": true
+          },
+          "IsClientOnly": true,
+          "IsLoop": true,
+          "Name": {
+            "Value": "PlanetInteractiveIndex"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.SetAllMissionWaypointsVisiable, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "TaskEnabled": true
+            },
+            {
+              "$type": "RPG.GameCore.ShowWaypointByProp, RPG.GameCore.Config",
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 96
+                }
+              },
+              "IconPath": "SpriteOutput/MapPics/Billboard/IconBillboardSubStoryMission02.png",
+              "InstanceID": {
+                "fixedValue": {
+                  "Value": 300002
+                }
+              },
+              "IsClientOnly": true,
+              "TaskEnabled": true
+            },
+            {
+              "$type": "RPG.GameCore.SetWaypointIgnoreLock, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "TaskEnabled": true
+            },
+            {
+              "$type": "RPG.GameCore.SetWaypointSafeZone, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChange, RPG.GameCore.Config",
+          "Condition": {
+            "$type": "RPG.GameCore.ByCompareFloorCustomString, RPG.GameCore.Config",
+            "CompareType": "Equal",
+            "CompareValue": {
+              "Value": "0"
+            },
+            "IsClientOnly": true,
+            "Name": {
+              "Value": "PlanetInteractiveIndex"
+            },
+            "TaskEnabled": true
+          },
+          "IsClientOnly": true,
+          "IsLoop": true,
+          "Name": {
+            "Value": "PlanetInteractiveIndex"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.SetAllMissionWaypointsVisiable, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "IsVisiable": true,
+              "TaskEnabled": true
+            },
+            {
+              "$type": "RPG.GameCore.HideWaypointByProp, RPG.GameCore.Config",
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 96
+                }
+              },
+              "InstanceID": {
+                "fixedValue": {
+                  "Value": 300002
+                }
+              },
+              "IsClientOnly": true,
+              "TaskEnabled": true
+            },
+            {
+              "$type": "RPG.GameCore.SetWaypointIgnoreLock, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "Reset": true,
+              "TaskEnabled": true
+            },
+            {
+              "$type": "RPG.GameCore.SetWaypointSafeZone, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "IsReset": true,
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

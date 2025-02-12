@@ -1,0 +1,140 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CreateLevelAreas, RPG.GameCore.Config",
+          "AssetPath": {
+            "Value": "Level/Mission/2000101/MainMission_LookatArea.prefab"
+          },
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger, RPG.GameCore.Config",
+          "ColliderRelativePath": "Trigger",
+          "DestroyAfterGraphEnd": true,
+          "DisableAfterTriggered": true,
+          "IsClientOnly": true,
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.AdventureCameraLookAt, RPG.GameCore.Config",
+              "ExtraFreelook3rdConfig": {
+                "BaseChangeParam": {
+                  "CenterPos": {
+                    "magnitude": 0.707106769,
+                    "normalized": {
+                      "magnitude": 0.99999994,
+                      "normalized": {
+                        "magnitude": 1,
+                        "sqrMagnitude": 1.00000012,
+                        "x": 0.7071068,
+                        "y": 0.7071068
+                      },
+                      "sqrMagnitude": 0.99999994,
+                      "x": 0.707106769,
+                      "y": 0.707106769
+                    },
+                    "sqrMagnitude": 0.5,
+                    "x": 0.5,
+                    "y": 0.5
+                  },
+                  "ChangeCurvePath": "Camera/BlendCurve/Blend_N1CameraTest.asset",
+                  "ExportToJson": true,
+                  "RecoveryCurvePath": "Camera/BlendCurve/Blend_N1CameraTest.asset",
+                  "RecoveryTime": 1,
+                  "Time": 1,
+                  "ZoomRatio": 1.2
+                },
+                "ExportToJson": true
+              },
+              "IsClientOnly": true,
+              "LockCameraInput": true,
+              "LookAtDuration": 5,
+              "LookAtTargetAnchorName": {
+                "Value": "LookatPoint"
+              },
+              "LookAtTargetAreaName": {
+                "Value": "MainMission_LookatArea"
+              },
+              "LookAtTransitionCurvePath": "Camera/BlendCurve/Blend_N1CameraTest.asset",
+              "LookAtTransitionDuration": 3,
+              "MaxAngle": 60,
+              "TaskEnabled": true,
+              "UnlockCameraAfterRecover": true
+            }
+          ],
+          "OnTriggerExit": [],
+          "SkipFakeAvatar": true,
+          "TargetGroupID": {},
+          "TargetID": {},
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 14
+                }
+              },
+              "ID": {
+                "fixedValue": {
+                  "Value": 300004
+                }
+              }
+            }
+          },
+          "TargetTypes": [],
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger, RPG.GameCore.Config",
+          "ColliderRelativePath": "Trigger",
+          "DestroyAfterGraphEnd": true,
+          "DisableAfterTriggered": true,
+          "IsClientOnly": true,
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+              "IsClientOnly": true,
+              "Key": "Mission_100010137",
+              "TaskEnabled": true
+            }
+          ],
+          "SkipFakeAvatar": true,
+          "TargetGroupID": {},
+          "TargetID": {},
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx, RPG.GameCore.Config",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "fixedValue": {
+                  "Value": 14
+                }
+              },
+              "ID": {
+                "fixedValue": {
+                  "Value": 300005
+                }
+              }
+            }
+          },
+          "TargetTypes": [],
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

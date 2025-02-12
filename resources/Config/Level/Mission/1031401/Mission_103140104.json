@@ -1,0 +1,52 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_103140104"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.CalculateMissionCustomValue, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TargetMissionCustomValue": {
+            "ValidValueParamList": [
+              0,
+              6
+            ],
+            "isRange": true
+          },
+          "TargetSubmissionID": 103140104,
+          "TaskEnabled": true,
+          "ValueA": {
+            "MainMissionID": 1031401,
+            "MissionCustomValue": {
+              "ValidValueParamList": [
+                0,
+                6
+              ],
+              "isRange": true
+            },
+            "Type": "CustomValue"
+          },
+          "ValueB": {
+            "DirectValue": 1
+          }
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_103140104",
+          "MainMissionID": 1031401,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

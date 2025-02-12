@@ -1,0 +1,101 @@
+{
+  "AbilityList": [
+    {
+      "Name": "LocalPlayer_Fugue_00_NormalAtk01",
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange"
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.LookAt"
+            },
+            {
+              "$type": "RPG.GameCore.AdventureTriggerAnimStateWithMove"
+            },
+            {
+              "$type": "RPG.GameCore.WaitAnimState"
+            },
+            {
+              "$type": "RPG.GameCore.VCameraConfigChange"
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.AdventureFireProjectile",
+                  "OnProjectileHit": [
+                    {
+                      "$type": "RPG.GameCore.AdventureTriggerAttack",
+                      "TriggerBattle": true
+                    }
+                  ],
+                  "OnProjectileLifetimeFinish": [
+                    {
+                      "$type": "RPG.GameCore.AdventureTriggerAttack",
+                      "TriggerBattle": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.WaitAnimState"
+            },
+            {
+              "$type": "RPG.GameCore.RadialBlurEffect"
+            },
+            {
+              "$type": "RPG.GameCore.WaitAnimState"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "LocalPlayer_Fugue_00_MazeSkill",
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.AdventureTriggerAnimStateWithMove"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState"
+        },
+        {
+          "$type": "RPG.GameCore.RadialBlurEffect"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState"
+        },
+        {
+          "$type": "RPG.GameCore.AdventureTriggerAttack",
+          "OnAttack": [
+            {
+              "$type": "RPG.GameCore.AddMazeBuff",
+              "ID": 122501,
+              "LifeTime": {
+                "FixedValue": null,
+                "IsDynamic": true
+              }
+            }
+          ],
+          "TriggerBattle": false
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState"
+        }
+      ]
+    },
+    {
+      "Name": "LocalPlayer_Fugue_00_BeforeBattleStunListener",
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.AddAdventureModifier",
+          "ModifierName": "ADV_StageAbility_Fugue_00_BeforeBattleStunListener"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";              
+//Fenni
+option java_package = "emu.lunarcore.proto";
+
+import "BattleTarget.proto";
+
+message ChallengeBossPhaseSettleNotify {
+    bool is_win = 10;
+    bool is_reward = 7;//this tag needed to be right ,or AS doesnt have second half
+    uint32 phase = 12;
+    repeated BattleTarget challenge_battle_target_list = 8;
+    uint32 score_two = 14;
+    uint32 challenge_score = 3;
+    bool is_remaining_action = 13;//this tag needed to be right ,or AS doesnt have second half
+    uint32 challenge_id = 6;
+    uint32 page_number = 4; //this value need to be 1
+    uint32 stars = 9;
+}
+

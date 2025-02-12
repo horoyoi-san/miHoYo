@@ -1,0 +1,70 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.ShowFuncBtn, RPG.GameCore.Config",
+          "CDDuration": 3,
+          "HideWhenGraphFinish": true,
+          "IsClientOnly": true,
+          "ItemID": 140336,
+          "OverrideIconPath": "SpriteOutput/SkillIcons/Com/SkillIcon_Book.png",
+          "PuzzleFunc": "Info",
+          "Show": true,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PPFilterStackEffect, RPG.GameCore.Config",
+          "Active": true,
+          "AssetPath": "EnviroSystem/PostProcessFilterAsset/oldfilmFilter.asset",
+          "IsClientOnly": true,
+          "Priority": "High",
+          "Rate": 1,
+          "RecoverDuration": 0.5,
+          "StartRate": -1,
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "2000902_Change"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.SetFuncBtn, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "ShowBtnEffect": true,
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "MaxAdvencePerTick": -1,
+          "TaskEnabled": true,
+          "WaitTime": {
+            "fixedValue": {
+              "Value": 5
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetFuncBtn, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

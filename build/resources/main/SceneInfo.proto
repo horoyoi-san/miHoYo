@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_package = "emu.lunarcore.proto";
+
+import "SceneEntityInfo.proto";
+import "SceneGroupState.proto";
+import "SceneEntityGroupInfo.proto";
+
+message SceneInfo {
+    repeated uint32 lighten_section_list = 3;
+    repeated SceneEntityInfo entity_list = 10;
+    uint32 leader_entity_id = 7;
+    uint32 world_id = 6; 
+    map<string, sint32> extra_data = 9;
+    repeated uint32 group_id_list = 1064;//265 del it
+    uint32 plane_id = 8;
+    uint32 game_mode_type = 15;
+    uint32 client_pos_version = 4;
+    uint32 floor_id = 14;
+    repeated SceneEntityGroupInfo entity_group_list = 328;
+    repeated SceneGroupState group_state_list = 944;
+    uint32 entry_id = 12;
+}

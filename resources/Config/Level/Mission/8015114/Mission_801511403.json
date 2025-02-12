@@ -1,0 +1,86 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PlayFullScreenTransfer, RPG.GameCore.Config",
+          "Action": [
+            {
+              "$type": "RPG.GameCore.ScrTrfActTaskList, RPG.GameCore.Config",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.SwitchCharacterAnchor, RPG.GameCore.Config",
+                  "AnchorName": {
+                    "Value": "Anchor1"
+                  },
+                  "AreaName": {
+                    "Value": "LevelArea_P43215_F43215001_G10"
+                  },
+                  "CharacterUniqueName": "LocalPlayer",
+                  "IsClientOnly": true,
+                  "IsLocalPlayer": true,
+                  "ResetAnimation": true,
+                  "ResetCamera": true,
+                  "Target": {
+                    "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer, RPG.GameCore.Config",
+                    "IncludeStoryPlayer": true
+                  },
+                  "TaskEnabled": true
+                },
+                {
+                  "$type": "RPG.GameCore.PlayerRemoteControlOtherEntity, RPG.GameCore.Config",
+                  "IsClientOnly": true,
+                  "SpecialNPCID": 12117,
+                  "TaskEnabled": true
+                },
+                {
+                  "$type": "RPG.GameCore.PlayerForceWalk, RPG.GameCore.Config",
+                  "ForceWalk": true,
+                  "IsClientOnly": true,
+                  "TaskEnabled": true
+                }
+              ]
+            }
+          ],
+          "IsClientOnly": true,
+          "KeepDuration": 0.5,
+          "PostDuration": 0.5,
+          "PrevDuration": -1,
+          "TaskEnabled": true,
+          "Type": "Black"
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString, RPG.GameCore.Config",
+          "CustomString": {
+            "Value": "Talk_801511403"
+          },
+          "TaskEnabled": true
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "Key": "Mission_801511403",
+          "TaskEnabled": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.SetHudTemplate, RPG.GameCore.Config",
+          "EnableTemplate": true,
+          "IsClientOnly": true,
+          "TaskEnabled": true,
+          "TemplateID": 1013
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

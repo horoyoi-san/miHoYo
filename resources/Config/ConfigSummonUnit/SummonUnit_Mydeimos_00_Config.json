@@ -1,0 +1,151 @@
+{
+  "ConfigEntityPath": "Config/ConfigEntity/SummonUnit/SummonUnit_Common_TeamField_Entity.json",
+  "Duration": {
+    "fixedValue": {
+      "Value": -1
+    }
+  },
+  "GatherConfig": {
+    "CentripetalFactorX": 12,
+    "CentripetalFactorY": 100,
+    "CentripetalSpeedCurve": "Camera/BlendCurve/BlendCut_1220_MazeCentripetalSpeed.asset",
+    "CollideIgnorePlayer": true,
+    "ConstraintRadius": 8,
+    "ForAttack": true,
+    "IsClockwise": true,
+    "MaxRadius": 2,
+    "MinRadius": 1,
+    "RegionOffset": -4,
+    "RegionRadius": 4,
+    "RingCount": 2,
+    "TangentSpeedCurve": "Camera/BlendCurve/BlendCut_1220_MazeTangentSpeed.asset",
+    "TangentSpeedFactorX": 40,
+    "UpdateOnce": true
+  },
+  "GroupConfigName": "StaticUnit",
+  "ShoesType": "boot",
+  "TickLodTemplateName": "DefaultStaticEntity",
+  "TriggerConfig": {
+    "CustomTriggers": [
+      {
+        "DefaultEnable": true,
+        "DontExitAfterEnter": true,
+        "OnTriggerEnter": [
+          {
+            "$type": "RPG.GameCore.PredicateTaskList, RPG.GameCore.Config",
+            "Predicate": {
+              "$type": "RPG.GameCore.AdvByIsEliteMonster, RPG.GameCore.Config",
+              "Inverse": true,
+              "IsClientOnly": true,
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+                "Alias": "TaskActionTarget"
+              },
+              "TaskEnabled": true
+            },
+            "SuccessTaskList": [
+              {
+                "$type": "RPG.GameCore.LookAt, RPG.GameCore.Config",
+                "AngleOffset": 180,
+                "CustomTargetType": {
+                  "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+                  "Alias": "Caster"
+                },
+                "Duration": 0.05,
+                "IsClientOnly": true,
+                "PerformerType": {
+                  "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+                  "Alias": "TaskActionTarget"
+                },
+                "TaskEnabled": true,
+                "ToTargetRatio": 1
+              }
+            ],
+            "TaskEnabled": true
+          },
+          {
+            "$type": "RPG.GameCore.AdventureTriggerAnimStateWithMove, RPG.GameCore.Config",
+            "AnimLogicState": "OnHit",
+            "AnimStateName": "Hit_H",
+            "IsClientOnly": true,
+            "MovingRangeList": [],
+            "StopWhenHitOthers": true,
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+              "Alias": "TaskActionTarget"
+            },
+            "TaskEnabled": true
+          }
+        ],
+        "OnlyCheckFilterOnEnter": true,
+        "Radius": {
+          "fixedValue": {
+            "Value": 10
+          }
+        },
+        "RayStartOffsetY": 1,
+        "SkipFakeAvatar": true,
+        "TargetTypes": [
+          "NPCMonster"
+        ],
+        "TriggerName": "GatheringRange",
+        "UseVerticalBound": true
+      },
+      {
+        "DefaultEnable": true,
+        "NeedRaycast": true,
+        "OnTriggerEnter": [
+          {
+            "$type": "RPG.GameCore.TriggerHitProp, RPG.GameCore.Config",
+            "ClientMode": "PreShow",
+            "HitConfig": {
+              "HitAnimation": "Hit",
+              "HitEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Mydeimos_00/Eff_Avatar_Mydeimos_00_MazeSkill_Hit.prefab",
+              "HitEffectHeight": 1
+            },
+            "IsClientOnly": true,
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+              "Alias": "TaskActionTarget"
+            },
+            "TaskEnabled": true
+          }
+        ],
+        "OnTriggerEnterRollback": [
+          {
+            "$type": "RPG.GameCore.PropDestructReset, RPG.GameCore.Config",
+            "IsClientOnly": true,
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+              "Alias": "TaskActionTarget"
+            },
+            "TaskEnabled": true
+          }
+        ],
+        "OnTriggerExit": [],
+        "OnlyCheckFilterOnEnter": true,
+        "Radius": {
+          "fixedValue": {
+            "Value": 10
+          }
+        },
+        "RayStartOffsetY": 1,
+        "SkipFakeAvatar": true,
+        "TargetFilter": {
+          "$type": "RPG.GameCore.ByIsPropLockable, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias, RPG.GameCore.Config",
+            "Alias": "ParamEntity"
+          },
+          "TaskEnabled": true
+        },
+        "TargetTypes": [
+          "Prop"
+        ],
+        "TriggerName": "HitPropTrigger",
+        "UseVerticalBound": true
+      }
+    ]
+  }
+}

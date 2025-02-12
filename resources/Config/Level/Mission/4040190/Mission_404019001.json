@@ -1,0 +1,67 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions, RPG.GameCore.Config",
+          "IsClientOnly": true,
+          "MainMissionIDList": [
+            4040117
+          ],
+          "PerformanceIDList": [],
+          "TaskEnabled": true,
+          "TaskIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList, RPG.GameCore.Config",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareMainMissionState, RPG.GameCore.Config",
+            "IsClientOnly": true,
+            "MainMissionID": 4040117,
+            "MainMissionState": "Finish",
+            "TaskEnabled": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList, RPG.GameCore.Config",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareItemNumber, RPG.GameCore.Config",
+                "CompareType": "Equal",
+                "IsClientOnly": true,
+                "ItemID": {
+                  "fixedValue": {
+                    "Value": 140179
+                  }
+                },
+                "Number": {
+                  "fixedValue": {
+                    "Value": 1
+                  }
+                },
+                "TaskEnabled": true
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.ConsumeMissionItem, RPG.GameCore.Config",
+                  "IsAutoConsume": true,
+                  "IsClientOnly": true,
+                  "SimpleTalk": {
+                    "ProtectTime": 0.8,
+                    "TextSpeed": 20
+                  },
+                  "SubMissionID": 404019001,
+                  "TaskEnabled": true
+                }
+              ],
+              "TaskEnabled": true
+            }
+          ],
+          "TaskEnabled": true
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}
