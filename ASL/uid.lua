@@ -5,7 +5,7 @@ local function beta_text()
       local textComponent = gameObject:GetComponentInChildren(typeof(CS.RPG.Client.LocalizedText))
 
       if textComponent then
-          textComponent.text = "<color=#ff0400>T</color><color=#ff0400>h</color><color=#ffffff>a</color><color=#000dff>i</color><color=#000dff>l</color> <color=#ffffff>a</color><color=#ff0400>n</color><color=#ff0400>d</color>|<color=#ff0000>Horoyoi-san SR</color>"
+          textComponent.text = "<color=#ff0400>T</color><color=#ff0400>h</color><color=#ffffff>a</color><color=#000dff>i</color><color=#000dff>l</color><color=#ffffff>a</color><color=#ff0400>n</color><color=#ff0400>d</color>|<color=#ff0000>Horoyoi-san SR</color>"
       else
           -- log:write("No Text component found on the game object")
       end
