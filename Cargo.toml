@@ -1,0 +1,78 @@
+[workspace]
+members = ["crates/*", "crates/trigger-protobuf/trigger-protobuf-derive", "crates/trigger-database/migration", "crates/trigger-database/entity", "crates/trigger-fileconfig/blockfile"]
+resolver = "2"
+
+[workspace.package]
+version = "0.0.1"
+
+[workspace.dependencies]
+tokio = { version = "1.43.0", features = ["full"] }
+tokio-util = "0.7.13"
+
+axum = "0.8.1"
+futures = "0.3.31"
+zeromq = { version = "0.4.1", features = ["tokio-runtime", "tcp-transport"] }
+
+# Database
+sea-orm = { version = "1.1.4", features = ["sqlx-postgres", "runtime-tokio-rustls", "macros"] }
+
+# ECS
+bevy_app = { version = "0.15.1", default-features = false }
+bevy_ecs = { version = "0.15.1", default-features = false }
+bevy_derive = "0.15.1"
+
+# Serialization
+serde = { version = "1.0.217", features = ["derive"] }
+serde_json = "1.0.138"
+toml = "0.8.19"
+
+flatbuffers = "24.3.25"
+flatc-rust = "0.2.0"
+
+base64 = "0.22.1"
+lz4_flex = "0.11.3"
+
+# Debug
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+
+# Cryptography
+rsa = { version = "0.9.7", features = ["sha2"] }
+rand = { version = "0.8.5" }
+rand_mt = "5.0.0"
+aes = "0.8.4"
+ecb = { version = "0.1.2", features = ["alloc"] }
+
+# Util
+paste = "1.0.15"
+thiserror = "2.0.11"
+dashmap = "6.1.0"
+byteorder = "1.5.0"
+num_enum = "0.7.3"
+iter-read = "1.1.0"
+atomic_enum = "0.3.0"
+
+const_format = "0.2.34"
+xxhash-rust = { version = "0.8.15", features = ["const_xxh64"] }
+
+# Protobuf
+prost = "0.13.4"
+prost-types = "0.13.4"
+prost-build = "0.13.4"
+
+# Code generation
+proc-macro2 = "1.0.93"
+syn = "2.0.96"
+quote = "1.0.38"
+prettyplease = "0.2.29"
+
+# Internal
+trigger-sv = { path = "crates/trigger-sv" }
+trigger-logic = { path = "crates/trigger-logic" }
+trigger-cryptography = { path = "crates/trigger-cryptography" }
+trigger-encoding = { path = "crates/trigger-encoding" }
+trigger-codegen = { path = "crates/trigger-codegen" }
+trigger-protobuf = { path = "crates/trigger-protobuf" }
+trigger-protocol = { path = "crates/trigger-protocol" }
+trigger-database = { path = "crates/trigger-database" }
+trigger-fileconfig = { path = "crates/trigger-fileconfig" }
