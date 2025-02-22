@@ -40,6 +40,18 @@ Start each service in order from option `a)`.
 ### Configuration
 Most of the configuration (database, encryption keys) is stored in a shared environment configuration file (`environment.toml`). Some of server-specific options are stored in their respective configuration files (which are created upon first startup of each server).
 
+##### Database section
+You have to specify credentials for **PostgreSQL**<br>
+###### An example of database configuration:
+```
+[database]
+host = "localhost:5432"
+user_name = "postgres"
+password = ""
+db_name = "wicked_waifus_db"
+```
+##### NOTE: don't forget to create database with specified `db_name` (default: `wicked_waifus_db`). For example, you can do so with PgAdmin.
+
 ### Logging in
 To login to this server, you have to obtain a compatible game client. Currently supported one is `CNBetaWin1.6.0`, you can [get it here](https://git.xeondev.com/xeon/3/raw/branch/3/nap_beta_1.6_reversedrooms.torrent). Next, you have to apply the necessary [client patch](https://git.xeondev.com/ObolSquad/trigger-patch). It allows you to connect to the local server and replaces encryption keys with custom ones.
 
