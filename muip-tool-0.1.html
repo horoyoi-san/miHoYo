@@ -1,0 +1,256 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	</head>
+	<body class="bg-dark text-light">
+		<div class="container">
+			<div class="row mt-3">
+				<div class="offset-3 col-3">
+					<label for="muip-server-address">Server address:</label>
+					<input id="muip-server-address" class="form-control" type="text" value="127.0.0.1" />
+				</div>
+				<div class="col-3">
+					<label for="muip-server-port">Server port:</label>
+					<input id="muip-server-port" class="form-control" type="number" value="1361" />
+				</div>
+			</div>
+			<hr />
+			<div class="row">
+				<div class="offset-3 col-6">
+					<label for="gm-token">GM token:</label>
+					<input id="gm-token" class="form-control" type="text" value="fhsd6f86f67rt8fw78fw789we78r9789wer6re" />
+				</div>
+			</div>
+			<hr />
+			<div class="row">
+				<div class="offset-3 col-6">
+					<label for="uid">Target UID:</label>
+					<input id="uid" class="form-control" type="number" value="1" min="1" />
+				</div>
+			</div>
+			<hr />
+			<div class="row">
+				<div class="offset-3 col-6">
+					<label for="cmd">Command:</label>
+					<select id="cmd" class="form-control">
+						<option value="add-equip">addequip - Add Disk Drive</option>
+					</select>
+				</div>
+			</div>
+			<hr />
+			<div class="row">
+				<div class="offset-3 col-3">
+					<label for="level">Level:</label>
+					<input id="level" class="form-control" type="number" value="15" min="0" max="15"></input>
+				</div>
+				<div class="col-3">
+					<label for="rarity">Rarity:</label>
+					<select id="rarity" class="form-control">
+						<option value="4">S-rank</option>
+						<option value="3">A-rank</option>
+						<option value="2">B-rank</option>
+					</select>
+				</div>
+			</div>
+			<div class="row mt-3">
+				<div class="offset-3 col-5">
+					<label for="disk-set">Disk set:</label>
+					<select id="disk-set" class="form-control"></select>
+				</div>
+				<div class="col-1">
+					<label for="disk-slot">Slot:</label>
+					<input id="disk-slot" class="form-control" type="number" value="1" min="1" max="6" />
+				</div>
+			</div>
+			<div class="row mt-3">
+				<div class="offset-3 col-6">
+					<label for="main-stat">Main stat:</label>
+					<select id="main-stat" class="form-control"></select>
+				</div>
+			</div>
+			<div class="row mt-3">
+				<div class="offset-3 col-5">
+					<label for="sub-stat-1">Sub stat 1:</label>
+					<select id="sub-stat-1" class="form-control"></select>
+				</div>
+				<div class="col-1">
+					<label for="sub-stat-1-plus">+</label>
+					<input id="sub-stat-1-plus" class="form-control" type="number" value="0" min="0" max="5" />
+				</div>
+			</div>
+			<div class="row mt-3">
+				<div class="offset-3 col-5">
+					<label for="sub-stat-2">Sub stat 2:</label>
+					<select id="sub-stat-2" class="form-control"></select>
+				</div>
+				<div class="col-1">
+					<label for="sub-stat-2-plus">+</label>
+					<input id="sub-stat-2-plus" class="form-control" type="number" value="0" min="0" max="5" />
+				</div>
+			</div>
+			<div class="row mt-3">
+				<div class="offset-3 col-5">
+					<label for="sub-stat-3">Sub stat 3:</label>
+					<select id="sub-stat-3" class="form-control"></select>
+				</div>
+				<div class="col-1">
+					<label for="sub-stat-3-plus">+</label>
+					<input id="sub-stat-3-plus" class="form-control" type="number" value="0" min="0" max="5" />
+				</div>
+			</div>
+			<div class="row mt-3">
+				<div class="offset-3 col-5">
+					<label for="sub-stat-4">Sub stat 4:</label>
+					<select id="sub-stat-4" class="form-control"></select>
+				</div>
+				<div class="col-1">
+					<label for="sub-stat-4-plus">+</label>
+					<input id="sub-stat-4-plus" class="form-control" type="number" value="0" min="0" max="5" />
+				</div>
+			</div>
+			<div class="row mt-3">
+				<div class="offset-3 col-6">
+					<button
+						id="send"
+						class="form-control btn btn-primary"
+						type="button"
+					>
+						Add
+					</button>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			const disk_set = {
+				310: 'Woodpecker Electro',
+				311: 'Puffer Electro',
+				312: 'Shockstar Disco',
+				313: 'Freedom Blues',
+				314: 'Hormone Punk',
+				315: 'Soul Rock',
+				316: 'Swing Jazz',
+				318: 'Chaos Jazz',
+				319: 'Proto Punk',
+				322: 'Inferno Metal',
+				323: 'Chaotic Metal',
+				324: 'Thunder Metal',
+				325: 'Polar Metal',
+				326: 'Fanged Metal',
+				327: 'Branch & Blade Song',
+				328: 'Astral Voice',
+				329: 'Shadow Waltz [new]',
+				330: 'Song of Phaethon [new]',
+			};
+
+			const stat = {
+				11103: { name: 'HP', main_slots: [1], main_value: 550, sub_slots: [1, 2, 3, 4, 5, 6], sub_value: 112 },
+				11102: { name: 'HP%', main_slots: [4, 5, 6], main_value: 750, sub_slots: [1, 2, 3, 4, 5, 6], sub_value: 300 },
+				12103: { name: 'ATK', main_slots: [2], main_value: 79, sub_slots: [1, 2, 3, 4, 5, 6], sub_value: 19 },
+				12102: { name: 'ATK%', main_slots: [4, 5, 6], main_value: 750, sub_slots: [1, 2, 3, 4, 5, 6], sub_value: 300 },
+				13103: { name: 'DEF', main_slots: [3], main_value: 46, sub_slots: [1, 2, 3, 4, 5, 6], sub_value: 15 },
+				13102: { name: 'DEF%', main_slots: [4, 5, 6], main_value: 1200, sub_slots: [1, 2, 3, 4, 5, 6], sub_value: 480 },
+				23203: { name: 'PEN', main_slots: [], main_value: -1, sub_slots: [1, 2, 3, 4, 5, 6], sub_value: 9 },
+				23103: { name: 'PEN Ratio', main_slots: [5], main_value: 600, sub_slots: [], sub_value: -1 },
+				31402: { name: 'Anomaly Mastery', main_slots: [6], main_value: 750, sub_slots: [], sub_value: -1 },
+				31203: { name: 'Anomaly Proficiency', main_slots: [4], main_value: 92, sub_slots: [1, 2, 3, 4, 5, 6], sub_value: 9 },
+				21103: { name: 'CRIT Damage', main_slots: [4], main_value: 1200, sub_slots: [1, 2, 3, 4, 5, 6], sub_value: 480 },
+				20103: { name: 'CRIT Rate', main_slots: [4], main_value: 600, sub_slots: [1, 2, 3, 4, 5, 6], sub_value: 240 },
+				30502: { name: 'Energy Regen', main_slots: [6], main_value: 1500, sub_slots: [], sub_value: -1 },
+				12202: { name: 'Impact', main_slots: [6], main_value: 450, sub_slots: [], sub_value: -1 },
+				31803: { name: 'Electric DMG', main_slots: [5], main_value: 750, sub_slots: [], sub_value: -1 },
+				31903: { name: 'Ether DMG', main_slots: [5], main_value: 750, sub_slots: [], sub_value: -1 },
+				31603: { name: 'Fire DMG', main_slots: [5], main_value: 750, sub_slots: [], sub_value: -1 },
+				31703: { name: 'Ice DMG', main_slots: [5], main_value: 750, sub_slots: [], sub_value: -1 },
+				31503: { name: 'Physical DMG', main_slots: [5], main_value: 750, sub_slots: [], sub_value: -1 },
+			};
+
+			const disk_set_options = Object.entries(disk_set).map(([id, name]) => `<option value="${id}">${name}</option>`).join('');
+			document.getElementById('disk-set').innerHTML = disk_set_options;
+			function fill_main_stats() {
+				const slot_value = Number.parseInt(document.getElementById('disk-slot').value);
+				const main_stat_for_slot = Object.entries(stat).filter(([id, stat]) => stat.main_slots.includes(slot_value));
+				const main_stat_options = main_stat_for_slot.map(([id, stat]) => `<option value="${id}">${stat.name}</option>`).join('');
+				document.getElementById('main-stat').innerHTML = main_stat_options;
+				fill_sub_stats();
+			}
+			document.getElementById('disk-slot').addEventListener('change', fill_main_stats);
+			fill_main_stats();
+			function fill_sub_stats() {
+				const main_stat_value = Number.parseInt(document.getElementById('main-stat').value);
+				const sub_stat = Object.entries(stat)
+					.filter(([id, stat]) => stat.sub_slots.length > 0)
+					.filter(([id, stat]) => id != main_stat_value)
+				;
+				const sub_stat_options = sub_stat.map(([id, stat]) => `<option value="${id}">${stat.name}</option>`).join('');
+				document.getElementById('sub-stat-1').innerHTML = sub_stat_options;
+				document.getElementById('sub-stat-2').innerHTML = sub_stat_options;
+				document.getElementById('sub-stat-3').innerHTML = sub_stat_options;
+				document.getElementById('sub-stat-4').innerHTML = sub_stat_options;
+			}
+			document.getElementById('main-stat').addEventListener('change', fill_sub_stats);
+
+			function send_command() {
+				switch (document.getElementById('cmd').value) {
+					case 'add-equip': return send_add_equip();
+					default: alert('Unknown command!');
+				}
+			}
+
+			document.getElementById('send').addEventListener('click', send_command);
+
+			function send_add_equip() {
+				let command_str = 'addequip ';
+				command_str += document.getElementById('disk-set').value;
+				command_str += document.getElementById('rarity').value;
+				command_str += document.getElementById('disk-slot').value;
+				command_str += ' ';
+				command_str += document.getElementById('level').value;
+				command_str += ' 1 ';
+				const properties = [];
+				const main_stat_value = Number.parseInt(document.getElementById('main-stat').value);
+				properties.push(main_stat_value, 1, stat[main_stat_value].main_value);
+				let sub_stat_plus_sum = 0;
+				const used_sub_stats = [];
+				for (let i = 1; i <= 4; i++) {
+					const sub_stat_value = Number.parseInt(document.getElementById(`sub-stat-${i}`).value);
+					if (used_sub_stats.includes(sub_stat_value)) {
+						alert(`Duplicated substat ${stat[sub_stat_value].name}`);
+						return;
+					}
+					used_sub_stats.push(sub_stat_value);
+					const sub_stat_plus = Number.parseInt(document.getElementById(`sub-stat-${i}-plus`).value);
+					sub_stat_plus_sum += sub_stat_plus;
+					properties.push(sub_stat_value, (sub_stat_plus + 1), stat[sub_stat_value].sub_value);
+				}
+				command_str += `[${properties.join(' ')}]`;
+
+				if (sub_stat_plus_sum > 5) {
+					alert("Too many + on substats, maximum sum is 5");
+					return;
+				}
+
+				console.log(`Sending "${command_str}"`);
+				const req = new XMLHttpRequest();
+				req.addEventListener('load', function () {
+					response_json = JSON.parse(req.responseText);
+					console.log(response_json);
+				});
+				// CORS ERROR expected
+				// req.addEventListener('error', function () {
+				// 	alert("Request to MUIP server failed");
+				// });
+
+				const server_address = document.getElementById('muip-server-address').value;
+				const server_port = document.getElementById('muip-server-port').value;
+				const gm_token = document.getElementById('gm-token').value;
+				const uid = document.getElementById('uid').value;
+				const command_str_encoded = encodeURIComponent(command_str);
+				const query_params = `token=${gm_token}&player_uid=${uid}&command=${command_str}`;
+				const uri = `http://${server_address}:${server_port}/api/gm?${query_params}`;
+				req.open("GET", uri);
+				req.send();
+			}
+		</script>
+	</body>
+</html>
