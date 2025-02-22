@@ -48,7 +48,7 @@ You have to specify credentials for **PostgreSQL**<br>
 host = "localhost:5432"
 user_name = "postgres"
 password = ""
-db_name = "wicked_waifus_db"
+db_name = "trigger-rs"
 ```
 ##### NOTE: don't forget to create database with specified `db_name` (default: `wicked_waifus_db`). For example, you can do so with PgAdmin.
 
