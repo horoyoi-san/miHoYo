@@ -1,0 +1,415 @@
+table AvatarBaseTemplate {
+	id: int;
+	code_name: string;
+	name: string;
+	full_name: string;
+	audio_event_replace_param: string;
+	audio_bank: string;
+	hit_types: [int];
+	element_types: [int];
+	unk_1: int;
+	gender: int;
+	camp: int;
+	unk_2: [string];
+}
+
+struct Property {
+	property: int;
+	value: int;
+}
+
+struct RefineCost {
+	item_id: int;
+	number: int;
+}
+
+table WeaponTemplate {
+	item_id: int;
+	weapon_name: string;
+	unk_missing_field: int;
+	base_property: Property;
+	rand_property: Property;
+	star_limit: int;
+	exp_recycle: int;
+	weapon_script_config: string;
+	weapon_ui_model: string;
+	unk_1: int;
+	unk_missing_field_2: int;
+	unk_weapon_path: string;
+	unk_missing_field_3: int;
+	refine_initial: int;
+	refine_limit: int;
+	unk_missing_field_4: int;
+	unk_missing_field_5: int;
+	unk_string_with_values: string;
+	unk_missing_field_6: int;
+	unk_2: int; // 3
+	weapon_desc: string;
+	weapon_release_tag: string;
+	unk_empty_string: string;
+	avatar_id: int;
+	weapon_comment: string;
+	refine_costs: [RefineCost];
+	unk_3: int;
+}
+
+table UnlockConfigTemplate {
+	id: int;
+	unk_1: string;
+	unk_2: [int];
+	unk_3: int;
+	unk_4: int;
+	unk_5: int;
+	unk_6: string;
+	unk_7: int;
+	unk_8: string;
+	icon_res: string;
+	unk_9: int;
+	name: string;
+	unk_10: string;
+	unk_11: int;
+	unk_12: int;
+	unk_13: bool;
+	unk_14: int;
+	unk_15: string;
+	unk_16: int;
+	unk_17: string;
+	unk_18: int;
+	unk_19: int;
+	unk_20: string;
+	unk_21: int;
+	unk_22: string;
+}
+
+table PostGirlConfigTemplate {
+	id: int;
+	name: string;
+	tag: string;
+	unk_1: int;
+	unk_2: string;
+	unk_3: int;
+	role_icon_name: string;
+	unk_4: string;
+	unk_5: [int];
+}
+
+table ArchiveFileQuestTemplate {
+	id: int;
+	archive_id: int;
+	archive_name: string;
+	difficulty_lv: int;
+	show_type: int;
+	recommended_hit_types: [int];
+	video: string;
+	archive_file_name: string;
+	archive_file_num: string;
+	archive_file_ni_ids: [int];
+	auto_distribution: bool;
+	unk_1: bool;
+}
+
+table ArchiveBattleQuestTemplate {
+	id: int;
+	quest_name: string;
+	quest_desc: string;
+	target: string;
+	quest_type: int;
+	chapter: int;
+	difficulty: int;
+	monster_level: int;
+	recommended_level: int;
+	unk_1: int;
+	unk_2: int;
+	hollow_id: int;
+	first_battle_event_id: int;
+	battle_event_id: int;
+	unk_3: int;
+	battle_rank: string;
+	slot_1_avatar: int;
+	slot_2_avatar: int;
+	slot_3_avatar: int;
+	buddy: int;
+	unk_4: bool;
+	unk_5: int;
+	unk_6: bool;
+	chapter_name: string;
+	quest_image: int;
+	unk_7: string;
+	unk_8: bool;
+	unk_9: int;
+	unk_10: bool;
+	unk_11: int;
+	unk_12: string;
+	unk_13: int;
+}
+
+table SectionConfigTemplate {
+	section_id: int;
+	section_photo: string;
+	name: string;
+	born_transform: string;
+	alternative_born_transform: string;
+	unk_3: int;
+	section_name: string;
+}
+
+table MainCityBGMConfigTemplate {
+	id: int;
+	play_event_name: string;
+	state_name: string;
+}
+
+table HollowBuffTemplate {
+	id: int;
+	buff_name: string;
+	menu_name: string;
+	mini_icons: [int];
+	decorated_icons: [int];
+	unk_1: int;
+	price: int;
+	unlock_condition: string;
+	unk_2: bool;
+	client_ability: int;
+	targets: [string];
+	unk_3: int;
+	max_times: int;
+	unk_4: string;
+	description_text: string;
+	prefab: string;
+	icon: string;
+}
+
+table CafeConfigTemplate {
+	id: int;
+	menu_name: string;
+	unk_1: int;
+	price: int;
+	unlock_condition: string;
+	unk_2: bool;
+	description_text: string;
+	icon: int;
+	cafe_prefab: string;
+	reward_buff_id: int;
+	unk_3: int;
+	unk_4: int;
+	unk_5: [int];
+	energy_amount: int;
+	unk_7: int;
+	unk_8: int;
+}
+
+table EquipmentTemplate {
+	item_id: int;
+	equipment_type: int;
+	suit_type: int;
+	disk_icon_path: string;
+	drawing_path: string;
+	front_label_texture_path: string;
+	back_label_texture_path: string;
+	disk_texture_path: string;
+	play_music_tag: string;
+	pause_music_tag: string;
+}
+
+table EquipmentSuitTemplate {
+	id: int;
+	name: string;
+	primary_condition: int;
+	primary_suit_propertys: [Property];
+	primary_suit_ability: int;
+	primary_description: string;
+	secondary_condition: int;
+	secondary_suit_propertys: [Property];
+	secondary_suit_ability: int;
+	secondary_description: string;
+	suit_item_icon: string;
+	suit_story: string;
+	suit_filter_option: string;
+	suit_icon: string;
+}
+
+table HollowConfigTemplate {
+	id: int;
+	hollow_group: int;
+	name: string;
+	unlock_condition: string;
+	lock_hint: string;
+	pic_res: string;
+	model_res: string;
+	locked_color: string;
+	unlocked_color: string;
+	unk_1: bool;
+	unk_2: string;
+	unk_3: string;
+}
+
+table HollowQuestTemplate {
+	id: int;
+	unk_1: int;
+	chessboard_id: int;
+	unk_2: int;
+	group_id: int;
+	hollow_quest_type: int;
+	unk_3: int;
+	duration: string;
+	has_stamina: string;
+	environments: [string];
+	main_difficulty: string;
+	difficulties: [string];
+	recommended_elements: [string];
+	client: string;
+	unk_4: int;
+	unk_5: bool;
+	unk_6: int;
+	scale: int;
+	show_tip: int;
+	monster_level: int;
+	recommended_level: int;
+	average_level_tips: int;
+	recommended_hit_types: [int];
+	unk_7: [int];
+	unk_8: bool;
+	unk_9: bool;
+	unk_10: string;
+	unk_11: int;
+	unk_12: bool;
+	unk_13: int;
+	slot_1_avatar: int;
+	slot_2_avatar: int;
+	slot_3_avatar: int;
+	unk_14: int;
+	unk_15: bool;
+	unk_16: bool;
+	unk_17: int;
+	preview_res_group_id: int;
+	chessboard_res_group_id: int;
+	bgm_chapter_state: string;
+	unk_18: int;
+	unk_19: string; 
+	unk_20: int; 
+	unk_21: [int]; 
+	unk_22: int; 
+	unk_23: int; 
+	unk_24: int; 
+	unk_25: bool; 
+	unk_26: int; 
+	title: string; 
+	difficulty: string; 
+	target: string;
+	unk_27: [string];
+	unk_28: int;
+	unk_29: int; 
+	unk_30: bool;
+	unk_31: int; 
+	unk_32: bool;
+	unk_33: int;
+	hollow_item_ban_lists: [int];
+	unk_34: bool;
+	enemy_types: [string];
+	background: string;
+	unk_35: int;
+	unk_36: [int];
+	unk_37: [int];
+	unk_38: int;
+	unk_39: int;
+	unk_40: int;
+	unk_41: int;
+}
+
+table BattleGroupConfigTemplate {
+	id: int;
+	quest_id: int;
+	unk_1: int;
+	unk_2: string;
+	unk_3: int;
+	unk_4: string;
+	unk_5: string;
+	unk_6: [string];
+	battle_event_id: int;
+	unk_8: bool;
+	unk_9: bool;
+	unk_10: [string];
+}
+
+table MusicPlayerConfigTemplate {
+	id: int;
+	group_id: int;
+	unk_1: string;
+	play_tag: string;
+	pause_tag: string;
+	resume_tag: string;
+	stop_all_tag: string;
+	play_volume: string;
+	unk_2: string;
+	unk_3: int;
+	unlock_condition: string;
+	name: string;
+	unk_4: string;
+	unk_5: string;
+	unk_6: long;
+	unk_7: string;
+}
+
+table AvatarBaseTemplateTb {
+	data: [AvatarBaseTemplate];
+}
+
+table WeaponTemplateTb {
+	data: [WeaponTemplate];
+}
+
+table UnlockConfigTemplateTb {
+	data: [UnlockConfigTemplate];
+}
+
+table PostGirlConfigTemplateTb {
+	data: [PostGirlConfigTemplate];
+}
+
+table ArchiveFileQuestTemplateTb {
+	data: [ArchiveFileQuestTemplate];
+}
+
+table ArchiveBattleQuestTemplateTb {
+	data: [ArchiveBattleQuestTemplate];
+}
+
+table SectionConfigTemplateTb {
+	data: [SectionConfigTemplate];
+}
+
+table MainCityBGMConfigTemplateTb {
+	data: [MainCityBGMConfigTemplate];
+}
+
+table HollowBuffTemplateTb {
+	data: [HollowBuffTemplate];
+}
+
+table CafeConfigTemplateTb {
+	data: [CafeConfigTemplate];
+}
+
+table EquipmentTemplateTb {
+	data: [EquipmentTemplate];
+}
+
+table EquipmentSuitTemplateTb {
+	data: [EquipmentSuitTemplate];
+}
+
+table HollowConfigTemplateTb {
+	data: [HollowConfigTemplate];
+}
+
+table HollowQuestTemplateTb {
+	data: [HollowQuestTemplate];
+}
+
+table BattleGroupConfigTemplateTb {
+	data: [BattleGroupConfigTemplate];
+}
+
+table MusicPlayerConfigTemplateTb {
+	data: [MusicPlayerConfigTemplate];
+}
